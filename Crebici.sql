@@ -11,6 +11,7 @@ use crebici_bd;
 
 CREATE TABLE IF NOT EXISTS `clientes` (
   `idC` int(5) NOT NULL AUTO_INCREMENT,
+  `email` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
   `nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `apellido1` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `apellido2` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
@@ -23,11 +24,12 @@ CREATE TABLE IF NOT EXISTS `clientes` (
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`nombre`, `apellido1`, `apellido2`, `dni`, `direccion`) VALUES
-('nombre1', 'apellido11', 'apellido21', 'dni1', 'direccion1'),
-('nombre2', 'apellido12', 'apellido22', 'dni2', 'direccion2'),
-('nombre3', 'apellido13', 'apellido23', 'dni3', 'direccion3'),
-('nombre4', 'apellido14', 'apellido24', 'dni4', 'direccion4');
+INSERT INTO `clientes` (`nombre`, `email`, `apellido1`, `apellido2`, `dni`, `direccion`) VALUES
+('nombre1', 'email1@gmail.com' 'apellido11', 'apellido21', 'dni1', 'direccion1'),
+('nombre2', 'email2@gmail.com' 'apellido12', 'apellido22', 'dni2', 'direccion2'),
+('nombre3', 'email3@gmail.com' 'apellido13', 'apellido23', 'dni3', 'direccion3'),
+('nombre4', 'email4
+ @gmail.com' 'apellido14', 'apellido24', 'dni4', 'direccion4');
 
 -- --------------------------------------------------------
 --
