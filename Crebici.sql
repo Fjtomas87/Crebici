@@ -9,14 +9,15 @@ use crebici_bd;
 -- --------------------------------------------------------
 
 
-CREATE TABLE IF NOT EXISTS `clientes` (
+CREATE TABLE IF NOT EXISTS `usuarios` (
   `idC` int(5) NOT NULL AUTO_INCREMENT,
-  `email` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
   `nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `email` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
   `apellido1` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `apellido2` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `dni` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
-  `direccion` varchar(20) COLLATE utf8_spanish_ci NOT NULL, 
+  `direccion` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `tipoUser` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY(idC)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -24,16 +25,15 @@ CREATE TABLE IF NOT EXISTS `clientes` (
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`nombre`, `email`, `apellido1`, `apellido2`, `dni`, `direccion`) VALUES
-('nombre1', 'email1@gmail.com' 'apellido11', 'apellido21', 'dni1', 'direccion1'),
-('nombre2', 'email2@gmail.com' 'apellido12', 'apellido22', 'dni2', 'direccion2'),
-('nombre3', 'email3@gmail.com' 'apellido13', 'apellido23', 'dni3', 'direccion3'),
-('nombre4', 'email4
- @gmail.com' 'apellido14', 'apellido24', 'dni4', 'direccion4');
+INSERT INTO `usuarios` (`nombre`, `email`, `apellido1`, `apellido2`, `dni`, `direccion`, `tipoUser`) VALUES
+('nombre1', 'email1@gmail.com', 'apellido11', 'apellido21', 'dni1', 'direccion1', 'cliente'),
+('nombre2', 'email2@gmail.com', 'apellido12', 'apellido22', 'dni2', 'direccion2', 'cliente'),
+('nombre3', 'email3@gmail.com', 'apellido13', 'apellido23', 'dni3', 'direccion3', 'admin'),
+('nombre4', 'email4@gmail.com', 'apellido14', 'apellido24', 'dni4', 'direccion4', 'admin');
 
 -- --------------------------------------------------------
 --
--- Estructura de tabla para la tabla `bicicletas`
+-- Estructura de tabla para la tabla `bicis`
 --
 
 
@@ -46,11 +46,11 @@ CREATE TABLE IF NOT EXISTS `bicis` (
   `foto` varchar(35) COLLATE utf8_spanish_ci,
   `idC` int,
   PRIMARY KEY (idBici),
-  foreign key fk_Cli(idC) references clientes(idC)
+  foreign key fk_Usu(idC) references usuarios(idC)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `bicicletas`
+-- Volcado de datos para la tabla `bicis`
 --
 
 INSERT INTO `bicis` (`modelo`, `peso`, `descrip`, `pvp`, `idc`) VALUES
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `alquiler` (
   `idC` int,
   `idBici` int(5),
   PRIMARY KEY (idA),
-  foreign key fk_Clie(idC) references clientes(idC),
+  foreign key fk_Clie(idC) references usuarios(idC),
   foreign key fk_Bici(idBici) references bicis(idBici)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
