@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS `alquiler` (
   `fechaExp` date NOT NULL,
   `idC` int,
   `idBici` int(5),
+  `estado` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (idA),
   foreign key fk_Clie(idC) references usuarios(idC),
   foreign key fk_Bici(idBici) references bicis(idBici)
@@ -84,13 +85,13 @@ CREATE TABLE IF NOT EXISTS `alquiler` (
 -- Volcado de datos para la tabla `alquiler`
 --
 
-INSERT INTO `alquiler` (`fechaExp`, `idC`, `idBici`) VALUES
-('2019-04-30', 1, 1),
-('2019-04-30', 1, 2),
-('2019-04-30', 2, 3),
-('2019-04-30', 2, 4),
-('2019-04-30', 3, 5),
-('2019-04-30', 3, 6),
-('2019-04-30', 4, 7),
-('2019-04-30', 4, 8);
+INSERT INTO `alquiler` (`fechaExp`, `idC`, `idBici`, `estado`) VALUES
+('2019-04-30', 1, 1, "Pendiente"),
+('2019-04-30', 1, 2, "Pendiente"),
+('2019-04-30', 2, 3, "Pendiente"),
+('2019-04-30', 2, 4, "Pendiente"),
+('2019-04-30', 3, 5, "Pendiente"),
+('2019-04-30', 3, 6, "Pendiente"),
+('2019-04-30', 4, 7, "Pendiente"),
+('2019-04-30', 4, 8, "Pendiente");
 

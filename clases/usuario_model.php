@@ -1,6 +1,6 @@
-﻿<?php
+<?php
 require_once('db_abstract_model.php');
-class Cliente extends DBAbstractModel {
+class Usuario extends DBAbstractModel {
     public $idC;
 	public $email;
 	public $nombre;

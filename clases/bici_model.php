@@ -24,7 +24,7 @@ class Bici extends DBAbstractModel {
         if($idBici != ''){
             $this->query = "
             SELECT idBici, modelo, descrip, peso, pvp, foto, idC
-            FROM usuarios
+            FROM bicis
             WHERE idBici = '$idBici'
             ";
             $this->get_results_from_query();
@@ -36,8 +36,8 @@ class Bici extends DBAbstractModel {
         }
     }
     public function set($bici_data=array()) {
-        if(array_key_exists('email', $user_data)){
-            $this->get($user_data['email']); //leemos el usuario por si existe
+        if(array_key_exists('idBici', $bici_data)){
+            $this->get($bici_data['idBici']);
             foreach ($user_data as $campo=>$valor){
                 $$campo = $valor;
             }
@@ -50,23 +50,25 @@ class Bici extends DBAbstractModel {
             $this->execute_single_query();
         }
     }
-    public function edit($user_data=array()) {
-        foreach ($user_data as $campo=>$valor){
+    public function edit($bici_data=array()) {
+        foreach ($bici_data as $campo=>$valor){
             $$campo = $valor;
         }
         $this->query = "
-            UPDATE usuarios
-            SET nombre='$nombre',
-            apellido='$apellido',
-            clave='$clave'
-            WHERE email = '$email'
+            UPDATE bicis
+            SET modelo='$modelo',
+            descrip='$descrip',
+            peso='$peso',
+            pvp='$pvp',
+            foto='$foto'
+            WHERE idBici = '$idBici'
         ";
         $this->execute_single_query();
         }
-    public function delete($user_email='') {
+    public function delete($idBici='') {
         $this->query = "
-        DELETE FROM usuarios
-        WHERE email = '$user_email'
+        DELETE FROM bicis
+        WHERE idBici = '$idBici'
         ";
         $this->execute_single_query();
     }
