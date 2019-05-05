@@ -78,4 +78,3 @@ if(isset($_GET['d'])){
     <div class="row">
         <section class="p-4 col-12 col-md-10 border bg-success container">
            <article>
-              

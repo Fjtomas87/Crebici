@@ -18,12 +18,5 @@ if(isset($_SESSION['email'])){
                 <p class="">Email: <?php echo $usuario->getEmail() ?></p>
     </div>
     <?php
-    
-    
-    
-    
 }
 ?>
-
-
-

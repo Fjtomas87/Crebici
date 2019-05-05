@@ -110,7 +110,4 @@ class Usuario extends DBAbstractModel {
         return $this->tipoUser;
     }
 }
-
-    
-
 ?>

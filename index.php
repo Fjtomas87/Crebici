@@ -38,4 +38,3 @@ if($p=="resrvar"){
 <?php
 	include('footer.php');
 ?>
-               
