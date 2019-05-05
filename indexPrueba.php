@@ -21,12 +21,12 @@
        </div>
    </div>
     <nav>
-        <a class="active" href="/index.htm">Home</a>
+        <a class="active" href="/index.htm">Hme</a>
         <a href="/uno.htm">Uno</a>
         <a href="/dos.htm">Dos</a>
         <a href="/tres.htm">Tres</a>
     </nav>
-    <header>
+    <header class="fixed-top">
        <h1>Mi sitio web</h1>
        <p>Mi sitio web creado en html5</p>
        
@@ -45,7 +45,7 @@
         Creado por mi el 2019
     </footer>
     <script src="bootstrap/js/jquery-3.2.1.slim.min.js"></script>
-<script src="bootstrap/js/popper.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
