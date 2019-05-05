@@ -73,7 +73,7 @@ class Bici extends DBAbstractModel {
         $this->execute_single_query();
     }
     function __destruct() {
-        unset($this);
+        //unset($this);
     }
 }
 ?>
