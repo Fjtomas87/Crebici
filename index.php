@@ -1,7 +1,7 @@
 <?php
 	include('cabecera.php');
 	require('clases/usuario_model.php');
-	require('clases/bicis_model.php');
+	require('clases/bici_model.php');
 	require('clases/alquiler_model.php');
 ?>
 					
@@ -32,3 +32,4 @@ if($p=="todos"){
 <?php
 	include('footer.php');
 ?>
+               
