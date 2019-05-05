@@ -1,5 +1,6 @@
 <?php
-
+// Pagina del catalogo
+//Se buscan todas las bicis de la base de datos y se muestran
 $bici = new Bici();
 $bici->getTodos();
 $rows=$bici->getBicis();
@@ -10,7 +11,7 @@ $rows=$bici->getBicis();
     foreach($rows as $row){
 ?>
     <div class="m-3 p-3 col-5 col-md-3">
-        <a href="index.php?p=bici&b=<?php echo $row['idBici'] ?>">
+        <a href="index.php?p=bici&b=<?php echo $row['idBici']; ?>">
             <img src="<?php echo $row['foto']; ?>" class="img-fluid rounded img-thumbnail" alt="Bicicleta <?php echo $row['marca'] ?>">
                 <h2><?php echo $row['marca'], " ", $row['modelo']; ?></h2>
             <span>Precio: <?php echo $row['pvp'] ?> €/Dia</span>

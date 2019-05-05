@@ -3,7 +3,7 @@ abstract class DBAbstractModel {
 	private static $db_host = 'localhost';
 	private static $db_user = 'root';
 	private static $db_pass = '';
-	protected $db_name = 'mydb';
+	protected $db_name = 'crebici_bd';
 	protected $query;
 	protected $rows = array();
 	private $conn;

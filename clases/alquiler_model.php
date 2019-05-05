@@ -8,12 +8,8 @@ class Alquiler extends DBAbstractModel {
 	public $estado;
 	
 
-	function __construct($idA,$fechaExp,$idC,$idBici,$estado) {
-        $this->idA=$idA;
-        $this->fechaExp=$fechaExp;
-        $this->idC=$idC;
-        $this->idBici=$idBici;
-        $this->estado=$estado;   
+	function __construct() {
+        $this->db_name = 'crebici_bd';
 	}
 	
     public function get($idA='') {
@@ -66,9 +62,6 @@ class Alquiler extends DBAbstractModel {
         WHERE idA = '$idA'
         ";
         $this->execute_single_query();
-    }
-    function __destruct() {
-        //unset($this);
     }
 }
 ?>

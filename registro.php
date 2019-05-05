@@ -4,7 +4,15 @@ if(isset($_POST['registrar'])){
     $user_data=array('nombre'=>$_POST['nombre'],'apellido1'=>$_POST['apellido1'],'apellido2'=>$_POST['apellido2'],'email'=>$_POST['email'],'pass'=>$_POST['pass1'],'dni'=>$_POST['dni'],'direccion'=>$_POST['direccion'],'tipoUser'=>'User');
 	$usuario=new Usuario();
 	$usuario->set($user_data);
-    header("Location: index.php");
+    
+    $usuario=new Usuario();
+	$usuario->getUser($_POST['email'],$_POST['pass1']);
+    
+    if($usuario->getEmail()!=null){
+        $_SESSION['usuario'] = $usuario->getTipoUser();
+        $_SESSION['email'] = $usuario->getEmail();
+        header("Location: index.php");
+    }
     
 }
 

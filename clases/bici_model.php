@@ -1,29 +1,42 @@
 <?php
 require_once('db_abstract_model.php');
 class Bici extends DBAbstractModel {
-	public $idBici; 
-	public $modelo;
-	public $descrip; 
-	public $peso;
-	public $pvp;
-    public $foto;
-    public $idC;
+	protected $idBici; 
+    protected $marca;
+	protected $modelo;
+	protected $descrip; 
+	protected $peso;
+	protected $pvp;
+    protected $foto;
+    protected $idC;
 	
 
-	function __construct($idBici,$modelo,$descrip,$peso,$pvp,$foto,$idC) {
-		$this->idBici=$idBici;
-        $this->modelo=$modelo;
-        $this->descrip=$descrip;
-        $this->peso=$peso;
-        $this->pvp=$pvp;
-        $this->foto=$foto;
-        $this->idC=$idC;   
+	function __construct() {
+        $this->db_name = 'crebici_bd';
 	}
-	
+    public function getBicis(){
+		return $this->rows;
+	}
+	public function getTodos() {
+		$this->query = "
+		SELECT idBici, marca, tipo, modelo, descrip, peso, pvp, foto, idC
+		FROM bicis";
+		$this->get_results_from_query(); 
+		
+	}
+    public function getBiciByTipo($tipo='') {
+       
+            $this->query = "
+            SELECT idBici, marca, tipo, modelo, descrip, peso, pvp, foto, idC
+            FROM bicis
+            WHERE tipo = '$tipo' LIMIT 3
+            ";
+            $this->get_results_from_query();
+    }
     public function get($idBici='') {
         if($idBici != ''){
             $this->query = "
-            SELECT idBici, modelo, descrip, peso, pvp, foto, idC
+            SELECT idBici, marca, tipo, modelo, descrip, peso, pvp, foto, idC
             FROM bicis
             WHERE idBici = '$idBici'
             ";
@@ -43,9 +56,9 @@ class Bici extends DBAbstractModel {
             }
             $this->query = "
             INSERT INTO bicis
-            (modelo, descrip, peso, pvp, foto)
+            (marca, tipo, modelo, descrip, peso, pvp, foto)
             VALUES
-            ('$modelo', '$descrip', '$peso', '$pvp', '$pvp', '$foto')
+            ('$marca',' $tipo', '$modelo', '$descrip', '$peso', '$pvp', '$pvp', '$foto')
             ";
             $this->execute_single_query();
         }
@@ -56,7 +69,9 @@ class Bici extends DBAbstractModel {
         }
         $this->query = "
             UPDATE bicis
-            SET modelo='$modelo',
+            SET marca='$marca'
+            tipo='$tipo'
+            modelo='$modelo',
             descrip='$descrip',
             peso='$peso',
             pvp='$pvp',
@@ -72,8 +87,29 @@ class Bici extends DBAbstractModel {
         ";
         $this->execute_single_query();
     }
-    function __destruct() {
-        //unset($this);
+    public function getIdBici(){
+        return $this->idBici;
+    }
+    public function getMarca(){
+        return $this->marca;
+    }
+    public function getTipo(){
+        return $this->tipo;
+    }
+    public function getModelo(){
+        return $this->modelo;
+    }
+    public function getDescrip(){
+        return $this->descrip;
+    }
+    public function getPeso(){
+        return $this->peso;
+    }
+    public function getPvp(){
+        return $this->pvp;
+    }
+    public function getFoto(){
+        return $this->foto;
     }
 }
 ?>

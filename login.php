@@ -1,11 +1,10 @@
 <?php
 if(isset($_POST['login'])){
     
-    $user_data=array('email'=>$_POST['email'],'pass'=>$_POST['pass1']);
     $usuario=new Usuario();
-	$usuario->get($user_data);
+	$usuario->getUser($_POST['email'],$_POST['pass1']);
     
-    if(isset($usuario->email)){
+    if($usuario->getEmail()!=null){
         $_SESSION['usuario'] = $usuario->getTipoUser();
         $_SESSION['email'] = $usuario->getEmail();
         

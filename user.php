@@ -3,7 +3,7 @@
 if(isset($_SESSION['email'])){
     $user_data=array('email'=>$_SESSION['email']);
 	$usuario=new Usuario();
-	$usuario->show($user_data);
+	$usuario->get($user_data);
     
     ?>
     <div class="col mx-auto p-3 m-3 pl-5">

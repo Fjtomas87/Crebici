@@ -1,4 +1,4 @@
-</article>
+            </article>
         </section>
         <aside class="col-md-2 d-none d-md-block  bg-warning">
            <h3>Titulo de contenido</h3>
@@ -12,4 +12,4 @@
 <script src="bootstrap/js/popper.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
-</html>
+</html>    
