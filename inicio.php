@@ -10,5 +10,7 @@ if(isset($_GET['p'])){
 
 
 ?>
-<h2>Titulo de contenido</h2>
-<p> Contenido </p>
+<div>
+    <h2>Titulo de contenido</h2>
+    <p> Contenido </p>
+</div>

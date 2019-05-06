@@ -29,7 +29,7 @@ if($p=="user"){
 if($p=="bici"){
 	include("bici.php");
 }
-if($p=="resrvar"){
+if($p=="reserva"){
 	include("reservar.php");
 }
 

@@ -12,7 +12,7 @@ if(isset($_GET['b'])){
         <h3><?php echo $bici->getMarca(), " ", $bici->getModelo(); ?> </h3>
         <span><?php echo $bici->getDescrip() ?></span>
         <h3>Precio: <?php echo $bici->getPvp() ?> €/dia</h3>
-        <form action="index.php?p=reserva" method="post">
+        <form action="index.php?p=reserva&b=<?php echo $bici->getIdBici(); ?>" method="post">
             <button class="btn-outline-primary bg-warning" type="submit" name="reservar">Reservar</button>
         </form>
     </div> 
@@ -22,8 +22,9 @@ if(isset($_GET['b'])){
     
         <?php
         $tipo=$bici->getTipo();
+        $idBici=$bici->getIdBici();
         $biciAux= new Bici();
-        $biciAux->getBiciByTipo($tipo);
+        $biciAux->getBiciByTipo($tipo,$idBici);
         $rows=$biciAux->getBicis();
         foreach($rows as $row){       
         ?>

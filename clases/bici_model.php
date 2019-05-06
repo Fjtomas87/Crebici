@@ -24,12 +24,12 @@ class Bici extends DBAbstractModel {
 		$this->get_results_from_query(); 
 		
 	}
-    public function getBiciByTipo($tipo='') {
+    public function getBiciByTipo($tipo='', $idBici='') {
        
             $this->query = "
             SELECT idBici, marca, tipo, modelo, descrip, peso, pvp, foto, idC
             FROM bicis
-            WHERE tipo = '$tipo' LIMIT 3
+            WHERE tipo = '$tipo' AND idBici != '$idBici' LIMIT 3
             ";
             $this->get_results_from_query();
     }

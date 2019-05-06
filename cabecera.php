@@ -31,13 +31,13 @@ if(isset($_GET['d'])){
 <link rel="shortcut icon" href="/favicon.ico" />
 </head>
  
-<body class="container-fluid bg-primary" style="border">
+<body class="container bg-primary" style="border">
   
     
-    <header class="row">
-        <nav class=" col-12 navbar navbar-expand-md navbar-dark bg-dark">
-            <a href="#" class="navbar-brand ml-5"><img src="imagen/logo.jpg" style="width:50px"></a>
-            <a href="#" class="navbar-brand ">CREBICI</a>
+    <header class="row mt-5 pt-3">
+        <nav class=" col-12 navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a href="index.php" class="navbar-brand ml-5"><img src="imagen/logo.jpg" style="width:50px"></a>
+            <a href="index.php" class="navbar-brand ">CREBICI</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav justify-content-end">
@@ -76,5 +76,5 @@ if(isset($_GET['d'])){
         </nav>  
     </header>
     <div class="row">
-        <section class="p-4 col-12 col-md-10 border bg-success container">
-           <article>
+        <section class="p-4 col-12 col-md-10 border bg-success container justify-content-center">
+           <article class="row">

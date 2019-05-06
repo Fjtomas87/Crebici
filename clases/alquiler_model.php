@@ -28,8 +28,7 @@ class Alquiler extends DBAbstractModel {
         }
     }
     public function set($alquiler_data=array()) {
-        if(array_key_exists('idBici', $alquiler_data)){
-            $this->get($alquiler_data['idBici']);
+           
             foreach ($alquiler_data as $campo=>$valor){
                 $$campo = $valor;
             }
@@ -40,7 +39,6 @@ class Alquiler extends DBAbstractModel {
             ('$fechaExp', '$idC', '$idBici', '$estado')
             ";  
             $this->execute_single_query();
-        }
     }
     public function edit($alquiler_data=array()) {
         foreach ($alquiler_data as $campo=>$valor){
