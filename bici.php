@@ -4,9 +4,9 @@ if(isset($_GET['b'])){
     $bici->get($_GET['b']);
 ?>
     
-<div class="row mt-4 " >
+<div class="row mt-4 p-3 m-3" >
     <div class="col-4">
-        <img src=" <?php echo $bici->getFoto(); ?>" alt="Bicicleta<?php echo $bici->getMarca(); ?>" class="img-fluid rounded img-thumbnail">
+        <img src=" <?php echo $bici->getFoto(); ?>" id="imagenBici" alt="Bicicleta<?php echo $bici->getMarca(); ?>" class="img-fluid rounded img-thumbnail">
     </div>
     <div class="col-6">
         <h3><?php echo $bici->getMarca(), " ", $bici->getModelo(); ?> </h3>

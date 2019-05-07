@@ -12,8 +12,6 @@ if(isset($_GET['d'])){
 	require('clases/bici_model.php');
 	require('clases/alquiler_model.php');
 ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,16 +20,34 @@ if(isset($_GET['d'])){
     <meta name="description" content="SEO incompleto">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/estilo.css" />
+    <link rel="stylesheet" href="estilo.css" />
+    <!-- JavaScript Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- Add fancyBox -->
+	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <!-- Optionally add helpers - button, thumbnail and/or media -->
+	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+    <!-- Start WOWSlider.com HEAD section -->
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+    <script src="bootstrap/js/javaScript.js" ></script>
     <title>Cribici</title>
   </head>
 <head>
 
-
-<link rel="shortcut icon" href="/favicon.ico" />
 </head>
  
-<body class="container bg-primary" style="border">
+<body class="container">
   
     
     <header class="row mt-5 pt-3">
@@ -46,18 +62,37 @@ if(isset($_GET['d'])){
                     <li class="nav-item"><a href="" class="nav-link">Link 3</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Link 4</a></li>
                     <?php
+                    
                     if(isset($_SESSION['email'])){
-                        ?>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['email']; ?> </a>
-                                <div class="dropdown-menu">
-                                    <a href="index.php?p=user" class="dropdown-item">Cuenta</a>
-                                    <a href="index.php?d=1" class="dropdown-item">Cerrar sesion</a>
-                                </div>
-                        </li>
+                        if(isset($_SESSION['usuario'])=="admin"){
+                            ?>
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['usuario']; ?> </a>
+                                        <div class="dropdown-menu">
+                                            <a href="index.php?p=cuentas" class="dropdown-item">Cuentas</a>
+                                            <a href="index.php?p=user" class="dropdown-item">Alquileres</a>
+                                            <a href="index.php?p=user" class="dropdown-item">Facturacion</a>
+                                            <a href="index.php?d=1" class="dropdown-item">Cerrar sesion</a>
+                                        </div>
+                                </li>
+                        
+                        
+                            <?php
+                        
+                        }else{
+                            ?>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['email']; ?> </a>
+                                    <div class="dropdown-menu">
+                                        <a href="index.php?p=user" class="dropdown-item">Cuenta</a>
+                                        <a href="index.php?d=1" class="dropdown-item">Cerrar sesion</a>
+                                    </div>
+                            </li>
                         
                         
                         <?php
+                    }
+                    
                     }else{
                         ?>
                         <li class="nav-item dropdown">
@@ -77,4 +112,4 @@ if(isset($_GET['d'])){
     </header>
     <div class="row">
         <section class="p-4 col-12 col-md-10 border bg-success container justify-content-center">
-           <article class="row">
+           <article class="row p-3 m-3">

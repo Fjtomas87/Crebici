@@ -12,15 +12,26 @@ class Usuario extends DBAbstractModel {
     function __construct() {
         $this->db_name = 'crebici_bd';
 	}
+    public function getUsers(){
+		return $this->rows;
+	}
+    public function getTodos($email=''){
+        $this->query = "
+        SELECT *
+        FROM usuarios
+        WHERE email != '$email'
+        ";
+        $this->get_results_from_query();
+    }
+    
     public function getUser($email, $pass) {
 		
-			$this->query = "
-			SELECT idC, nombre, email, apellido1, apellido2, dni, direccion, tipoUser
-			FROM usuarios
-			WHERE email = '$email' AND pass = '$pass'
-			";
-         var_dump($this->query);
-			$this->get_results_from_query();
+        $this->query = "
+        SELECT idC, nombre, email, apellido1, apellido2, dni, direccion, tipoUser
+        FROM usuarios
+        WHERE email = '$email' AND pass = '$pass'
+        ";
+        $this->get_results_from_query();
            
 		if(count($this->rows) == 1){
 			foreach ($this->rows[0] as $propiedad=>$valor){

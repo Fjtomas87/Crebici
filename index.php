@@ -32,6 +32,9 @@ if($p=="bici"){
 if($p=="reserva"){
 	include("reservar.php");
 }
+if($p=="cuentas"){
+	include("cuentas.php");
+}
 
 ?>			
 	
