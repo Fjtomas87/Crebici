@@ -36,7 +36,7 @@ class Alquiler extends DBAbstractModel {
             INSERT INTO alquiler
             (fechaExp, idC, idBici, estado)
             VALUES
-            ('$fechaExp', '$idC', '$idBici', '$estado')
+            ('$fecha', '$idC', '$idBici', '$estado')
             ";  
             $this->execute_single_query();
     }

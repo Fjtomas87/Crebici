@@ -51,12 +51,12 @@ if(isset($_GET['d'])){
   
     
     <header class="row mt-5 pt-3">
-        <nav class=" col-12 navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a href="index.php" class="navbar-brand ml-5"><img src="imagen/logo.jpg" style="width:50px"></a>
+        <nav class="col-12 navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a href="index.php" class="navbar-brand ml-sm-5"><img src="imagen/logo.jpg" style="width:50px"></a>
             <a href="index.php" class="navbar-brand ">CREBICI</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav justify-content-end">
+                <ul class="navbar-nav ">
                     <li class="nav-item"><a href="index.php?p=catalogo" class="nav-link">Catalogo</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Link 2</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Link 3</a></li>
@@ -64,7 +64,8 @@ if(isset($_GET['d'])){
                     <?php
                     
                     if(isset($_SESSION['email'])){
-                        if(isset($_SESSION['usuario'])=="admin"){
+                        if(isset($_SESSION['usuario'])){
+                            if($_SESSION['usuario']=="admin"){
                             ?>
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['usuario']; ?> </a>
@@ -78,7 +79,7 @@ if(isset($_GET['d'])){
                         
                         
                             <?php
-                        
+                            }
                         }else{
                             ?>
                             <li class="nav-item dropdown">
@@ -111,5 +112,5 @@ if(isset($_GET['d'])){
         </nav>  
     </header>
     <div class="row">
-        <section class="p-4 col-12 col-md-10 border bg-success container justify-content-center">
+        <section class="p-4 col-12 col-md-10 border  container justify-content-center">
            <article class="row p-3 m-3">
