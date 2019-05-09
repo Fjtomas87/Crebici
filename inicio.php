@@ -7,13 +7,16 @@ if(isset($_GET['p'])){
 	$p=$_GET['p'];
 }
 
-
+if(isset($_POST['heLlamado'])){
+    echo "La llamada ha salido bien";
+}
 
 ?>
 <div>
     <h2>Nuevos modelos</h2>
-    <p> </p>
-    
+    <div class='divEjemplo'></div>
+    <button type='button' class='botondeprueba'>Dale loco</button>
+
     <!-- slideshow de imagenes con libreria wowslider de jquery  -->
 <div id="wowslider-container1">
     <div class="ws_images">
