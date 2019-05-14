@@ -13,3 +13,4 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>    
+<script src="bootstrap/js/javaScript.js" ></script>
