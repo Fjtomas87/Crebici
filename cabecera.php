@@ -39,7 +39,6 @@ if(isset($_GET['d'])){
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <script type="text/javascript" src="engine1/jquery.js"></script>
     <!-- End WOWSlider.com HEAD section -->
-    <script src="bootstrap/js/javaScript.js" ></script>
     <title>Cribici</title>
   </head>
 <head>

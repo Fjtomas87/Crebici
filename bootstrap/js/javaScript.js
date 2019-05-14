@@ -6,7 +6,7 @@ $(document).ready(function(){
     $(".botondeprueba").on("click", function(e){
         var x = "prueba X";
 
-        $.ajax({
+        jQuery.ajax({
             data: {heLlamado: x},
             url: "../../index.php",
             method: "POST",
