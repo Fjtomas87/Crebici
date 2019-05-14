@@ -5,7 +5,7 @@ $(document).ready(function(){
     
     $(".botondeprueba").on("click", function(e){
         var x = "prueba X";
-        e.preventDefault();
+
         $.ajax({
             data: {heLlamado: x},
             url: "../../index.php",
