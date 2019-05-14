@@ -39,5 +39,5 @@ if($p=="cuentas"){
 ?>			
 	
 <?php
-	include('footer.php');
+	include_once('footer.php');
 ?>

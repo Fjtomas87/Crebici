@@ -92,7 +92,7 @@ INSERT INTO `bicis` (`idBici`, `marca`, `tipo`, `modelo`, `descrip`, `peso`, `pv
 CREATE TABLE `usuarios` (
   `idC` int(5) NOT NULL,
   `nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `email` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
+  `email` varchar(35) COLLATE utf8_spanish_ci NOT NULL UNIQUE,
   `pass` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
   `apellido1` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `apellido2` varchar(20) COLLATE utf8_spanish_ci NOT NULL,

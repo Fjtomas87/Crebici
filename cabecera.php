@@ -18,27 +18,18 @@ if(isset($_GET['d'])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="SEO incompleto">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="estilo.css" />
     <!-- JavaScript Jquery -->
-    <script src="bootstrap/js/jquery-3.4.1.min.js"></script>
-    <!-- Add fancyBox -->
-	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-	<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-    <!-- Optionally add helpers - button, thumbnail and/or media -->
-	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
-	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
-	<!-- Add mousewheel plugin (this is optional) -->
-	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
-	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
     <!-- Start WOWSlider.com HEAD section -->
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <script type="text/javascript" src="engine1/jquery.js"></script>
     <!-- End WOWSlider.com HEAD section -->
+    <!-- Bootstrap CSS -->
+    <script src="bootstrap/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery-3.4.1.min.js"></script>
+    <script src="bootstrap/js/javaScript.js" ></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="estilo.css" />
     <title>Cribici</title>
   </head>
 <head>
@@ -111,4 +102,4 @@ if(isset($_GET['d'])){
     </header>
     <div class="row">
         <section class="p-4 col-12 col-md-10 border  container justify-content-center">
-           <article class="row p-3 m-3">
+           <article class="row">

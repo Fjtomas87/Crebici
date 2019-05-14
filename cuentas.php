@@ -5,8 +5,9 @@ if(isset($_SESSION['usuario'])){
         $usuario->getTodos($_SESSION['email']);
         $rows=$usuario->getUsers();
         ?>
-        <div class="row p-3 m-3">
+        
            <div class="col">
+              <h2 class="text-center">Cuentas Usuarios</h2>
                <table class="table table-hover bg-info p-3 m-3" id="tablaUsuarios">
                   <thead>
                        <tr>
@@ -30,9 +31,11 @@ if(isset($_SESSION['usuario'])){
                    ?>
                </table> 
            </div>
+            <div class="col showUser">
+                    
+            </div>
             
-            
-        </div>
+       
         <?php
     }
 }
