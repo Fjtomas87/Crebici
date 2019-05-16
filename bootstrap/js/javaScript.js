@@ -3,6 +3,27 @@ $(document).ready(function(){
         
     });
     
+    
+    
+    
+    
+    
+    
+    $(".botonPerfil").on("click",function(){
+        var id = $(this).attr("id");
+        //console.log(id);
+        $("#form"+id).removeClass("d-none");
+       
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
     $(".botondeprueba").on("click", function(e){
         var x = "prueba X";
         e.preventDefault();
@@ -51,26 +72,7 @@ $(document).ready(function(){
         console.log("Browser doesn't support geolocation!");
     }
     
-    
-    function Ubicacion(posicion){
-       
-        $.ajax({
-            type:'GET',
-            url: 'http://api.openweathermap.org/data/2.5/weather?lat='+ latitud +'&lon=' + longitud + "&units=metric&appid=9f50a805aa0089a1edd1829a5db029f0",
-            dataType: 'json' 
-        })
-            .done(function(data){
-								
-            console.log(data);
-            temperatura = data.main.temp; //creo las dos como constantes, para evitar problemas de variable not defined
-            ciudad = data.name;
-								
-								
-            })
-            .fail(function(){
-                alert("Fallo en la conexion al servidor")
-            });
-    }
+ 
     
 });
  
