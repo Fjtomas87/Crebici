@@ -10,10 +10,12 @@ $(document).ready(function(){
     
     
     $(".botonPerfil").on("click",function(){
+        
         var id = $(this).attr("id");
         //console.log(id);
+        $(".perfil").addClass("d-none")
         $("#form"+id).removeClass("d-none");
-       
+        
     });
     
     

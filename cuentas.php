@@ -36,7 +36,7 @@ if(isset($_SESSION['usuario'])){
                     foreach($rows as $row){
                 ?>
                     
-                        <form action="index.php?p=cuentas" method="POST" id="form<?php echo $row['idC'] ?>" class="perfil col-12 d-none m-3 p-3">
+                        <form action="index.php?p=cuentas" method="POST" id="form<?php echo $row['idC'] ?>" class="perfil col-12 d-none m-3 p-3 border">
                             <label class="p-1 mt-2" for="nombre">Id</label><input type="text" name="idC" id="idC" value="<?php echo $row['idC'] ?>" class="form-control col-sm-8">
                             <label class="p-1 mt-2" for="nombre">Nombre</label><input type="text" name="nombre" id="nombre" value="<?php echo $row['nombre'] ?>" class="form-control col-sm-8">
                             <label class="p-1 mt-2" for="apellido1">1º Apellido</label><input type="text" id="apellido1" name="apellido1" value="<?php echo $row['apellido1'] ?>" class="form-control col-sm-8"> 
