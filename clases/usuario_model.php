@@ -97,7 +97,7 @@ class Usuario extends DBAbstractModel {
 	}
     
     public function getIdC(){
-        return $this->nombre;
+        return $this->idC;
     }
     public function getNombre(){
         return $this->nombre;
