@@ -1,11 +1,26 @@
 $(document).ready(function(){
-    $("#reservarB").click(function(){
-        
+    
+    
+    $("#nombre").keyup(function(){
+        validar("nombre");
     });
-    
-    
-    
-    
+    $("#apellido1").keyup(function(){
+        validar("apellido1");
+    });
+    $("#apellido2").keyup(function(){
+        validar("apellido2");
+    });
+    $("#email").keyup(function(){
+        validar("email");
+    });
+    $("#dni").keyup(function(){
+        validar("dni");
+    });
+    $("#direccion").keyup(function(){
+        validar("direccion");
+    });
+  
+   
     
     
     
@@ -17,13 +32,6 @@ $(document).ready(function(){
         $("#form"+id).removeClass("d-none");
         
     });
-    
-    
-    
-    
-    
-    
-    
     
     
     $(".botondeprueba").on("click", function(e){
@@ -78,6 +86,81 @@ $(document).ready(function(){
     
 });
  
+function validar(campo){
+    if(campo == "nombre" || campo == "apellido1" || campo == "apellido2"){
+        var valor = document.getElementById(campo).value;
+        if( valor == null || valor.length == 0 || !/^[a-zA-Z\s]*$/.test(valor) ) {
+            $('#'+campo).parent().parent().css("color", "red");
+            $('#'+campo).css({"background": "red", "color":"white"});
+            $('#'+campo).parent().children('span').text("Campo no valido").show();
+            return false;
+        }else{
+            $('#'+campo).parent().parent().css("color", "green");
+            $('#'+campo).css({"background": "green", "color":"white"});
+            $('#'+campo).parent().children('span').hide();
+            return true;
+        }
+        
+        
+    }else if(campo == "email"){
+        var valor = document.getElementById(campo).value;
+        if( valor == null || valor.length == 0 || !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(valor) ) {
+            $('#'+campo).parent().parent().css("color", "red");
+            $('#'+campo).css({"background": "red", "color":"white"});
+            $('#'+campo).parent().children('span').text("Email no valido").show();
+            return false;
+        }else{
+            $('#'+campo).parent().parent().css("color", "green");
+            $('#'+campo).css({"background": "green", "color":"white"});
+            $('#'+campo).parent().children('span').hide();
+            return true;
+        }
+        
+    }else if(campo == "dni"){
+        var valor = document.getElementById(campo).value;
+        var validChars = 'TRWAGMYFPDXBNJZSQVHLCKET';
+        var nifRexp = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKET]$/i;
+        var nieRexp = /^[XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKET]$/i;
+        var str = valor.toString().toUpperCase();
+        if (!nifRexp.test(str) && !nieRexp.test(str)){
+            $('#'+campo).parent().parent().css("color", "red");
+            $('#'+campo).css({"background": "red", "color":"white"});
+            $('#'+campo).parent().children('span').text("Dni no valido").show();
+            return false;
+        }else{
+            var nie = str.replace(/^[X]/, '0').replace(/^[Y]/, '1').replace(/^[Z]/, '2');
 
+            var letra = str.substr(-1);
+            var charIndex = parseInt(nie.substr(0, 8)) % 23;
+
+            if (validChars.charAt(charIndex) === letra){
+                $('#'+campo).parent().parent().css("color", "green");
+                $('#'+campo).css({"background": "green", "color":"white"});
+                $('#'+campo).parent().children('span').hide();
+                return true;
+            }else{
+                $('#'+campo).parent().parent().css("color", "red");
+                $('#'+campo).css({"background": "red", "color":"white"});
+                $('#'+campo).parent().children('span').text("Dni no valido").show();
+                return false;
+            }
+        }
+
+          
+    }else if(campo == "direccion"){
+        var valor = document.getElementById(campo).value;
+        if( valor == null || valor.length == 0) {
+            $('#'+campo).parent().parent().css("color", "red");
+            $('#'+campo).css({"background": "red", "color":"white"});
+            $('#'+campo).parent().children('span').text("Campo no valido").show();
+            return false;
+        }else{
+            $('#'+campo).parent().parent().css("color", "green");
+            $('#'+campo).css({"background": "green", "color":"white"});
+            $('#'+campo).parent().children('span').hide();
+            return true;
+        }
+        
+    }
 	
-                  
+}
