@@ -3,24 +3,69 @@ $(document).ready(function(){
     
     $("#nombre").keyup(function(){
         validar("nombre");
+        botones();
     });
     $("#apellido1").keyup(function(){
         validar("apellido1");
+        botones();
     });
     $("#apellido2").keyup(function(){
         validar("apellido2");
+        botones();
     });
     $("#email").keyup(function(){
         validar("email");
+        botones();
     });
     $("#dni").keyup(function(){
         validar("dni");
+        botones();
     });
     $("#direccion").keyup(function(){
         validar("direccion");
+        botones();
     });
+    $("#pass1").keyup(function(){
+        validar("pass1");
+        botones();
+    });
+    $("#pass2").keyup(function(){
+        validar("pass2");
+        botones();
+    });
+    
+    
+    $("input")
   
-   
+    $("#verificar").on("click", function(){
+        var v1 = validar("nombre");
+        var v2 = validar("apellido1");
+        var v3 = validar("apellido2");
+        var v4 = validar("email");
+        var v5 = validar("dni");
+        var v6 = validar("direccion");
+        if (v1 && v2 && v3 && v4 && v5 && v6 ) {
+            $("#verificar").addClass("d-none");
+            $("#modificar").removeClass("d-none");
+            $("#eliminar").removeClass("d-none");
+        }
+            
+    });
+    $("#verificar2").on("click", function(){
+        var v1 = validar("nombre");
+        var v2 = validar("apellido1");
+        var v3 = validar("apellido2");
+        var v4 = validar("email");
+        var v5 = validar("pass1");
+        var v6 = validar("pass2");
+        var v7 = validar("dni");
+        var v8 = validar("direccion");
+        if (v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8) {
+            $("#verificar2").addClass("d-none");
+            $("#modificar").removeClass("d-none");
+        }
+            
+    });
     
     
     
@@ -28,7 +73,8 @@ $(document).ready(function(){
         
         var id = $(this).attr("id");
         //console.log(id);
-        $(".perfil").addClass("d-none")
+        $(".msg").addClass("d-none");
+        $(".perfil").addClass("d-none");
         $("#form"+id).removeClass("d-none");
         
     });
@@ -79,13 +125,17 @@ $(document).ready(function(){
         
         
     }else{
-        console.log("Browser doesn't support geolocation!");
+        console.log("El navegador no permite la geolocalizacion.");
     }
     
  
     
 });
- 
+function botones(){
+    $("#verificar").removeClass("d-none");
+    $("#modificar").addClass("d-none");
+    $("#eliminar").addClass("d-none");
+}
 function validar(campo){
     if(campo == "nombre" || campo == "apellido1" || campo == "apellido2"){
         var valor = document.getElementById(campo).value;
@@ -152,7 +202,7 @@ function validar(campo){
         if( valor == null || valor.length == 0) {
             $('#'+campo).parent().parent().css("color", "red");
             $('#'+campo).css({"background": "red", "color":"white"});
-            $('#'+campo).parent().children('span').text("Campo no valido").show();
+            $('#'+campo).parent().children('span').text("Campo vacio").show();
             return false;
         }else{
             $('#'+campo).parent().parent().css("color", "green");
@@ -161,6 +211,32 @@ function validar(campo){
             return true;
         }
         
+    }else if(campo == "pass1"){
+        var valor = document.getElementById(campo).value;
+        if( valor == null || valor.length < 4 ){
+            $('#'+campo).parent().parent().css("color", "red");
+            $('#'+campo).css({"background": "red", "color":"white"});
+            $('#'+campo).parent().children('span').text("Contraseña corta").show();
+            return false;
+        }else{
+            $('#'+campo).parent().parent().css("color", "green");
+            $('#'+campo).css({"background": "green", "color":"white"});
+            $('#'+campo).parent().children('span').hide();
+            return true;
+        }
+    }else if(campo == "pass2"){
+        var pass1 = document.getElementById("pass1").value; 
+        var valor = document.getElementById(campo).value;
+        if(valor == null || valor.length < 4 || valor != pass1 ){
+            $('#'+campo).parent().parent().css("color", "red");
+            $('#'+campo).css({"background": "red", "color":"white"});
+            $('#'+campo).parent().children('span').text("Contraseña corta").show();
+            return false;
+        }else{
+            $('#'+campo).parent().parent().css("color", "green");
+            $('#'+campo).css({"background": "green", "color":"white"});
+            $('#'+campo).parent().children('span').hide();
+            return true;
+        }
     }
-	
 }

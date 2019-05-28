@@ -60,8 +60,8 @@ if(isset($_GET['d'])){
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['usuario']; ?> </a>
                                         <div class="dropdown-menu">
                                             <a href="index.php?p=cuentas" class="dropdown-item">Usuarios</a>
-                                            <a href="index.php?p=user" class="dropdown-item">Alquileres</a>
-                                            <a href="index.php?p=user" class="dropdown-item">Facturacion</a>
+                                            <a href="index.php?p=alquiler" class="dropdown-item">Alquileres</a>
+                                            <a href="index.php?p=factu" class="dropdown-item">Facturacion</a>
                                             <a href="index.php?p=user" class="dropdown-item">Cuenta</a>
                                             <a href="index.php?d=1" class="dropdown-item">Cerrar sesion</a>
                                         </div>
@@ -101,6 +101,6 @@ if(isset($_GET['d'])){
             </div> 
         </nav>  
     </header>
-    <div class="row">
+    <div class="row mb-3 pb-2">
         <section class="p-4 col-12 col-md-10 border  container justify-content-center">
            <article class="row">

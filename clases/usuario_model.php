@@ -71,7 +71,7 @@ class Usuario extends DBAbstractModel {
             
 	
 	}
-	public function edit($user_data=array()) {
+	public function editByAdmin($user_data=array()) {
 		foreach ($user_data as $campo=>$valor){
 			$$campo = $valor;
         }
@@ -84,14 +84,31 @@ class Usuario extends DBAbstractModel {
 			dni='$dni',
             direccion='$direccion',
             tipoUser='$tipoUser'
-			WHERE email = '$email'
+			WHERE idC = '$idC'
 		";
 		$this->execute_single_query();
-		}
-	public function delete($user_email='') {
+    }
+    public function edit($user_data=array()) {
+		foreach ($user_data as $campo=>$valor){
+			$$campo = $valor;
+        }
+		$this->query = "
+			UPDATE usuarios
+			SET nombre='$nombre',
+            email='$email',
+			apellido1='$apellido1',
+            apellido2='$apellido2',
+            pass='$pass',
+			dni='$dni',
+            direccion='$direccion'
+			WHERE idC = '$idC'
+		";
+		$this->execute_single_query();
+    }
+	public function delete($user_idC='') {
 		$this->query = "
 		DELETE FROM usuarios
-		WHERE email = '$user_email'
+		WHERE idC = '$user_idC'
 		";
 		$this->execute_single_query();
 	}
@@ -104,6 +121,9 @@ class Usuario extends DBAbstractModel {
     }
     public function getEmail(){
         return $this->email;
+    }
+    public function getPass(){
+        return $this->pass;
     }
     public function getApellido1(){
         return $this->apellido1;
