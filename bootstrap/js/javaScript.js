@@ -33,9 +33,9 @@ $(document).ready(function(){
         validar("pass2");
         botones();
     });
-    
-    
-    $("input")
+    $("#tipoUser").click(function(){
+        botones();
+    });
   
     $("#verificar").on("click", function(){
         var v1 = validar("nombre");
@@ -70,12 +70,22 @@ $(document).ready(function(){
     
     
     $(".botonPerfil").on("click",function(){
-        
+        $("#formVista *").css({"color":"black"});
+        $("#formVista input:not([type='button']):not([type='submit'])").css({"background": "white"});
         var id = $(this).attr("id");
-        //console.log(id);
+        console.log(id);
+        $("#formVista").addClass("d-none");
+        botones();
         $(".msg").addClass("d-none");
-        $(".perfil").addClass("d-none");
-        $("#form"+id).removeClass("d-none");
+        $("#idC").val($("#idC"+id).val());
+        $("#nombre").val($("#nombre"+id).val());
+        $("#apellido1").val($("#apellido1"+id).val());
+        $("#apellido2").val($("#apellido2"+id).val());
+        $("#email").val($("#email"+id).val());
+        $("#dni").val($("#dni"+id).val());
+        $("#direccion").val($("#direccion"+id).val());
+        $("#tipoUser").val($("#tipoUser"+id).val());
+        $("#formVista").removeClass("d-none");
         
     });
     

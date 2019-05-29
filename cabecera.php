@@ -37,10 +37,8 @@ if(isset($_GET['d'])){
 </head>
  
 <body class="container">
-  
-    
-    <header class="row mt-5 pt-3">
-        <nav class="col-12 navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <header class="row mb-4 pb-3">
+        <nav class="col-12 navbar navbar-expand-md bg-warning fixed-top">
             <a href="index.php" class="navbar-brand ml-sm-5"><img src="imagen/logo.jpg" style="width:50px"></a>
             <a href="index.php" class="navbar-brand ">CREBICI</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu"><span class="navbar-toggler-icon"></span></button>
@@ -102,5 +100,5 @@ if(isset($_GET['d'])){
         </nav>  
     </header>
     <div class="row mb-3 pb-2">
-        <section class="p-4 col-12 col-md-10 border  container justify-content-center">
+        <section class="p-4 col-12 col-md-10 container justify-content-center">
            <article class="row">

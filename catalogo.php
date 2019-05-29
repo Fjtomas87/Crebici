@@ -10,11 +10,11 @@ $rows=$bici->getBicis();
 <?php
     foreach($rows as $row){
 ?>
-    <div class="m-3 p-3 col-9 col-sm-5 col-md-3 border">
-        <a href="index.php?p=bici&b=<?php echo $row['idBici']; ?>">
+    <div class="m-3 p-3 col-9 col-sm-5 col-md-3 border biciCata rounded">
+        <a href="index.php?p=bici&b=<?php echo $row['idBici']; ?>" class="link-bicis container">
             <img src="<?php echo $row['foto']; ?>" class="img-fluid rounded img-thumbnail" alt="Bicicleta <?php echo $row['marca'] ?>">
-                <h2><?php echo $row['marca'], " ", $row['modelo']; ?></h2>
-            <span>Precio: <?php echo $row['pvp'] ?> €/Dia</span>
+                <h2 class="text-center"><?php echo $row['marca'], " ", $row['modelo']; ?></h2>
+            <span class="">Precio: <?php echo $row['pvp'] ?> €/Dia</span>
         </a>
     </div>
    

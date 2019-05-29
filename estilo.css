@@ -1,2 +1,15 @@
 body{
+    background: #444 url(imagen/bg-2.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+.biciCata {
+    border-width:3px !important;
+    color: black;
+    background-color: rgba(255,255,255,0.5)
+}
+.biciCata *{
+    color: black;
+}
+link-bicis{
+  text-decoration: none;
 }
