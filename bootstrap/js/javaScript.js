@@ -63,14 +63,18 @@ $(document).ready(function(){
         if (v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8) {
             $("#verificar2").addClass("d-none");
             $("#modificar").removeClass("d-none");
+            $("#registrar").removeClass("d-none");
         }
             
     });
     
     
     
+    
     $(".botonPerfil").on("click",function(){
-        $("#formVista *").css({"color":"black"});
+        $("#formVista input").css({"color":"black"});
+        $("#formVista *").removeClass("green");
+        $("#formVista *").removeClass("red");
         $("#formVista input:not([type='button']):not([type='submit'])").css({"background": "white"});
         var id = $(this).attr("id");
         console.log(id);
@@ -143,21 +147,25 @@ $(document).ready(function(){
 });
 function botones(){
     $("#verificar").removeClass("d-none");
+    $("#verificar2").removeClass("d-none");
     $("#modificar").addClass("d-none");
     $("#eliminar").addClass("d-none");
+    $("#registrar").addClass("d-none");
 }
 function validar(campo){
     if(campo == "nombre" || campo == "apellido1" || campo == "apellido2"){
         var valor = document.getElementById(campo).value;
         if( valor == null || valor.length == 0 || !/^[a-zA-Z\s]*$/.test(valor) ) {
-            $('#'+campo).parent().parent().css("color", "red");
+            $('#'+campo).parent().parent().removeClass("green");
+            $('#'+campo).parent().parent().addClass("red");
             $('#'+campo).css({"background": "red", "color":"white"});
-            $('#'+campo).parent().children('span').text("Campo no valido").show();
+            $('#'+campo).parent().children('span').text("Campo no valido").removeClass("d-none");
             return false;
         }else{
-            $('#'+campo).parent().parent().css("color", "green");
+            $('#'+campo).parent().children('span').addClass("d-none");
+            $('#'+campo).parent().parent().addClass("green");
             $('#'+campo).css({"background": "green", "color":"white"});
-            $('#'+campo).parent().children('span').hide();
+            $('#'+campo).parent().children('span').addClass("d-none");
             return true;
         }
         
@@ -165,14 +173,15 @@ function validar(campo){
     }else if(campo == "email"){
         var valor = document.getElementById(campo).value;
         if( valor == null || valor.length == 0 || !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(valor) ) {
-            $('#'+campo).parent().parent().css("color", "red");
+            $('#'+campo).parent().parent().removeClass("green");
+            $('#'+campo).parent().parent().addClass("red");
             $('#'+campo).css({"background": "red", "color":"white"});
-            $('#'+campo).parent().children('span').text("Email no valido").show();
+            $('#'+campo).parent().children('span').text("Email no valido").removeClass("d-none");
             return false;
         }else{
-            $('#'+campo).parent().parent().css("color", "green");
+            $('#'+campo).parent().parent().addClass("green");
             $('#'+campo).css({"background": "green", "color":"white"});
-            $('#'+campo).parent().children('span').hide();
+            $('#'+campo).parent().children('span').addClass("d-none");
             return true;
         }
         
@@ -183,9 +192,10 @@ function validar(campo){
         var nieRexp = /^[XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKET]$/i;
         var str = valor.toString().toUpperCase();
         if (!nifRexp.test(str) && !nieRexp.test(str)){
-            $('#'+campo).parent().parent().css("color", "red");
+            $('#'+campo).parent().parent().removeClass("green");
+            $('#'+campo).parent().parent().addClass("red");
             $('#'+campo).css({"background": "red", "color":"white"});
-            $('#'+campo).parent().children('span').text("Dni no valido").show();
+            $('#'+campo).parent().children('span').text("Dni no valido").removeClass("d-none");
             return false;
         }else{
             var nie = str.replace(/^[X]/, '0').replace(/^[Y]/, '1').replace(/^[Z]/, '2');
@@ -194,14 +204,15 @@ function validar(campo){
             var charIndex = parseInt(nie.substr(0, 8)) % 23;
 
             if (validChars.charAt(charIndex) === letra){
-                $('#'+campo).parent().parent().css("color", "green");
+                $('#'+campo).parent().parent().addClass("green");
                 $('#'+campo).css({"background": "green", "color":"white"});
-                $('#'+campo).parent().children('span').hide();
+                $('#'+campo).parent().children('span').addClass("d-none");
                 return true;
             }else{
-                $('#'+campo).parent().parent().css("color", "red");
+                $('#'+campo).parent().parent().removeClass("green");    
+                $('#'+campo).parent().parent().addClass("red");
                 $('#'+campo).css({"background": "red", "color":"white"});
-                $('#'+campo).parent().children('span').text("Dni no valido").show();
+                $('#'+campo).parent().children('span').text("Dni no valido").removeClass("d-none");
                 return false;
             }
         }
@@ -210,42 +221,51 @@ function validar(campo){
     }else if(campo == "direccion"){
         var valor = document.getElementById(campo).value;
         if( valor == null || valor.length == 0) {
-            $('#'+campo).parent().parent().css("color", "red");
+            $('#'+campo).parent().parent().removeClass("green");
+            $('#'+campo).parent().parent().addClass("red");
             $('#'+campo).css({"background": "red", "color":"white"});
-            $('#'+campo).parent().children('span').text("Campo vacio").show();
+            $('#'+campo).parent().children('span').text("Campo vacio").removeClass("d-none");
             return false;
         }else{
-            $('#'+campo).parent().parent().css("color", "green");
+            $('#'+campo).parent().parent().addClass("green");
             $('#'+campo).css({"background": "green", "color":"white"});
-            $('#'+campo).parent().children('span').hide();
+            $('#'+campo).parent().children('span').addClass("d-none");
             return true;
         }
         
     }else if(campo == "pass1"){
         var valor = document.getElementById(campo).value;
         if( valor == null || valor.length < 4 ){
-            $('#'+campo).parent().parent().css("color", "red");
+            $('#'+campo).parent().parent().removeClass("green");
+            $('#'+campo).parent().parent().addClass("red");
             $('#'+campo).css({"background": "red", "color":"white"});
-            $('#'+campo).parent().children('span').text("Contraseña corta").show();
+            $('#'+campo).parent().children('span').text("Contraseña corta").removeClass("d-none");
             return false;
         }else{
-            $('#'+campo).parent().parent().css("color", "green");
+            $('#'+campo).parent().parent().addClass("green");
             $('#'+campo).css({"background": "green", "color":"white"});
-            $('#'+campo).parent().children('span').hide();
+            $('#'+campo).parent().children('span').addClass("d-none");
             return true;
         }
     }else if(campo == "pass2"){
         var pass1 = document.getElementById("pass1").value; 
         var valor = document.getElementById(campo).value;
-        if(valor == null || valor.length < 4 || valor != pass1 ){
-            $('#'+campo).parent().parent().css("color", "red");
+        if(valor == null || valor.length < 4){
+            $('#'+campo).parent().parent().removeClass("green");
+            $('#'+campo).parent().parent().addClass("red");
             $('#'+campo).css({"background": "red", "color":"white"});
-            $('#'+campo).parent().children('span').text("Contraseña corta").show();
+            $('#'+campo).parent().children('span').text("Contraseña corta").removeClass("d-none");
             return false;
+        }else if(valor != pass1){
+            $('#'+campo).parent().parent().removeClass("green");
+            $('#'+campo).parent().parent().addClass("red");
+            $('#'+campo).css({"background": "red", "color":"white"});
+            $('#'+campo).parent().children('span').text("Contraseñas no coinciden").removeClass("d-none");
         }else{
-            $('#'+campo).parent().parent().css("color", "green");
+            
+            $('#'+campo).parent().parent().addClass("green");
             $('#'+campo).css({"background": "green", "color":"white"});
-            $('#'+campo).parent().children('span').hide();
+            $('#'+campo).parent().children('span').addClass("d-none");
             return true;
         }
     }

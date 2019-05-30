@@ -47,48 +47,48 @@ if(isset($_SESSION['usuario'])){
                </table>
                <span id="msg" class="msg"><?php echo $msg; ?></span> 
            </div>
-           <div class="container perfil d-none mx-auto" id="formVista">
+           <div class="container perfil d-none m-auto border text-center opac" id="formVista">
                         <form action="index.php?p=cuentas" method="POST" id="form0" class="m-3 p-3 border form">
                            <h2 class="text-center">Datos Usuario</h2>
                             <div class="form-group">
-                                <label class="control-label p-1 mt-2" for="idC">Id</label>
+                                <label class="control-label  p-1 mt-2" for="idC">Id</label>
                                 <div class="div-input">
-                                    <input type="text" name="idC" id="idC" value="" class="form-control  col-sm-8" readonly>
+                                    <input type="text" name="idC" id="idC" value="" class="form-control m-auto col-sm-8" readonly>
                                     <span class="help-block"></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label p-1 mt-2" for="nombre">Nombre</label>
+                                <label class="control-label  p-1 mt-2" for="nombre">Nombre</label>
                                 <div class="div-input">
-                                    <input type="text" name="nombre" id="nombre" value="" class="form-control col-sm-8">
-                                    <span class="help-block"></span>
+                                    <input type="text" name="nombre" id="nombre" value="" class="form-control m-auto col-sm-8">
+                                    <span class="help-block "></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label p-1 mt-2" for="apellido1">1º Apellido</label>
+                                <label class="control-label  p-1 mt-2" for="apellido1">1º Apellido</label>
                                 <div class="div-input">
-                                    <input type="text" id="apellido1" name="apellido1" value="" class="form-control col-sm-8"> 
-                                    <span class="help-block"></span>
+                                    <input type="text" id="apellido1" name="apellido1" value="" class="form-control m-auto col-sm-8"> 
+                                    <span class="help-block "></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label p-1 mt-2" for="apellido2">2º Apellido</label>
+                                <label class="control-label  p-1 mt-2" for="apellido2">2º Apellido</label>
                                 <div class="div-input">
-                                    <input type="text" id="apellido2" name="apellido2" value="" class="form-control col-sm-8"> 
-                                    <span class="help-block"></span>
+                                    <input type="text" id="apellido2" name="apellido2" value="" class="form-control m-auto col-sm-8"> 
+                                    <span class="help-block "></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label p-1 mt-2" for="email">Email</label>
                                 <div class="div-input">
-                                    <input type="email" id="email" name="email" value="" class="form-control col-sm-8">
-                                    <span class="help-block"></span>
+                                    <input type="email" id="email" name="email" value="" class="form-control m-auto col-sm-8">
+                                    <span class="help-block "></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label p-1 mt-2" for="dni">Dni</label>
                                 <div class="div-input">
-                                    <input type="text" id="dni" name="dni" value="" class="form-control col-sm-8"> 
+                                    <input type="text" id="dni" name="dni" value="" class="form-control m-auto col-sm-8"> 
                                     <span class="help-block"></span>
                                 </div>
                             </div>
@@ -96,21 +96,21 @@ if(isset($_SESSION['usuario'])){
                             <div class="form-group">
                                 <label class="control-label p-1 mt-2" for="direccion">Direccion</label>
                                 <div class="div-input">
-                                    <input type="text" id="direccion" name="direccion" value="" class="form-control col-sm-8">
+                                    <input type="text" id="direccion" name="direccion" value="" class="form-control m-auto col-sm-8">
                                     <span class="help-block"></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                            <label class="control-label p-1 mt-2" for="tipoUser">Tipo Usuario</label>
+                            <label class="control-label  mx-auto" for="tipoUser">Tipo Usuario</label>
                             <div class="div-input">
-                               <select class="custom-select form-control col-sm-8" id="tipoUser" name="tipoUser">
+                               <select class="custom-select m-auto form-control col-sm-8" id="tipoUser" name="tipoUser">
                                    <option value="cliente" >Cliente</option>
                                    <option value="admin">Admin</option>
                                 </select>
                             </div>
                             </div><br><br>
-                            <div class="form-group">
-                                <input type="button" value="Verificar" id="verificar" name="verificar" class="verificar btn btn-warning">
+                            <div class="form-group d-flex justify-content-around">
+                                <input type="button" value="Verificar" id="verificar" name="verificar" class=" mx-auto verificar btn btn-warning">
                                 <input type="submit" value="Modificar" id="modificar" name="modificar" class="modificar btn btn-warning mr-5 d-none">
                                 <input type="submit" value="Eliminar" id="eliminar" name="eliminar" class="eliminar btn btn-warning d-none">
                             </div>
@@ -119,7 +119,7 @@ if(isset($_SESSION['usuario'])){
                 <?php
                     foreach($rows as $row){
                 ?>
-                    <div class="container perfil d-none mx-auto" id="form<?php echo $row['idC'] ?>">
+                    <div class="container perfil d-none" id="form<?php echo $row['idC'] ?>">
                         <form action="" method="POST" id="form<?php echo $row['idC']; ?>" class="m-3 p-3 border form">
                            
                             <div class="form-group">

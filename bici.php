@@ -4,11 +4,11 @@ if(isset($_GET['b'])){
     $bici->get($_GET['b']);
 ?>
     
-<div class="row mt-4 p-3 m-3" >
-    <div class="col-4">
+<div class="row mt-4 p-3 m-3 opac rounded text-center" >
+    <div class="col-10 col-sm-6 col-md-4">
         <img src=" <?php echo $bici->getFoto(); ?>" id="imagenBici" alt="Bicicleta<?php echo $bici->getMarca(); ?>" class="img-fluid rounded img-thumbnail">
     </div>
-    <div class="col-6">
+    <div class="col-10 col-sm-6">
         <h3><?php echo $bici->getMarca(), " ", $bici->getModelo(); ?> </h3>
         <span><?php echo $bici->getDescrip() ?></span>
         <h3>Precio: <?php echo $bici->getPvp() ?> €/dia</h3>
@@ -17,7 +17,7 @@ if(isset($_GET['b'])){
         </form>
     </div> 
 </div> 
-<div class="row m-2 mt-5 bg-warning mx-auto">
+<div class="row m-2 mt-5 bg-warning mx-auto rounded">
   <h2 class="col-12" style="text-align:center">Productos relacionados</h2>
     
         <?php
@@ -28,7 +28,7 @@ if(isset($_GET['b'])){
         $rows=$biciAux->getBicis();
         foreach($rows as $row){       
         ?>
-        <div class="col-12 col-md-3 m-3 p-3">
+        <div class="col-12 col-md-3 m-3 p-3 opac rounded border">
             <a href="index.php?p=bici&b=<?php echo $row['idBici'] ?>">
                 <h3><?php echo $row['marca']," ", $row['modelo']; ?></h3>
                 <img src="<?php echo $row['foto']; ?>" alt="Bicicleta <?php echo $row['marca']; ?>" class="img-fluid rounded img-thumbnail">

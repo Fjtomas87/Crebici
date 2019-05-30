@@ -38,16 +38,16 @@ if(isset($_GET['d'])){
  
 <body class="container">
     <header class="row mb-4 pb-3">
-        <nav class="col-12 navbar navbar-expand-md bg-warning fixed-top">
+        <nav class="col-12 navbar navbar-expand-md navbar-light bg-light fixed-top rounded-bottom">
             <a href="index.php" class="navbar-brand ml-sm-5"><img src="imagen/logo.jpg" style="width:50px"></a>
             <a href="index.php" class="navbar-brand ">CREBICI</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu"><span class="navbar-toggler-icon"></span></button>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu"><span class="bt-nav navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ">
-                    <li class="nav-item"><a href="index.php?p=catalogo" class="nav-link">Catalogo</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Link 2</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Link 3</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Link 4</a></li>
+                <ul class="navbar-nav d-flex justify-content-around">
+                    <li class="nav-item"><a href="index.php?p=catalogo" class="nav-link btn">Catalogo</a></li>
+                    <li class="nav-item"><a href="" class="nav-link btn">Link 2</a></li>
+                    <li class="nav-item"><a href="" class="nav-link btn">Link 3</a></li>
+                    <li class="nav-item"><a href="" class="nav-link btn">Link 4</a></li>
                     <?php
                     
                     if(isset($_SESSION['email'])){
@@ -55,13 +55,13 @@ if(isset($_GET['d'])){
                             if($_SESSION['usuario']=="admin"){
                             ?>
                                 <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['usuario']; ?> </a>
+                                    <a href="#" class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['usuario']; ?> </a>
                                         <div class="dropdown-menu">
-                                            <a href="index.php?p=cuentas" class="dropdown-item">Usuarios</a>
-                                            <a href="index.php?p=alquiler" class="dropdown-item">Alquileres</a>
-                                            <a href="index.php?p=factu" class="dropdown-item">Facturacion</a>
-                                            <a href="index.php?p=user" class="dropdown-item">Cuenta</a>
-                                            <a href="index.php?d=1" class="dropdown-item">Cerrar sesion</a>
+                                            <a href="index.php?p=cuentas" class="dropdown-item btn">Usuarios</a>
+                                            <a href="index.php?p=alquiler" class="dropdown-item btn">Alquileres</a>
+                                            <a href="index.php?p=factu" class="dropdown-item btn">Facturacion</a>
+                                            <a href="index.php?p=user" class="dropdown-item btn">Cuenta</a>
+                                            <a href="index.php?d=1" class="dropdown-item btn">Cerrar sesion</a>
                                         </div>
                                 </li>
                         
@@ -71,10 +71,10 @@ if(isset($_GET['d'])){
                         }else{
                             ?>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['email']; ?> </a>
+                                <a href="#" class="nav-link  btn dropdown-toggle" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['email']; ?> </a>
                                     <div class="dropdown-menu">
-                                        <a href="index.php?p=user" class="dropdown-item">Cuenta</a>
-                                        <a href="index.php?d=1" class="dropdown-item">Cerrar sesion</a>
+                                        <a href="index.php?p=user" class="dropdown-item btn">Cuenta</a>
+                                        <a href="index.php?d=1" class="dropdown-item btn">Cerrar sesion</a>
                                     </div>
                             </li>
                         
@@ -85,10 +85,10 @@ if(isset($_GET['d'])){
                     }else{
                         ?>
                         <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop2">Cuenta</a>
-                                <div class="dropdown-menu">
-                                    <a href="index.php?p=registro" class="dropdown-item">Registrar</a>
-                                    <a href="index.php?p=login" class="dropdown-item">Acceder</a>
+                            <a href="#" class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbardrop2">Cuenta</a>
+                                <div class="dropdown-menu btn">
+                                    <a href="index.php?p=registro" class="dropdown-item btn">Registrar</a>
+                                    <a href="index.php?p=login" class="dropdown-item btn">Acceder</a>
                                 </div>
                         </li>
                         <?php
@@ -100,5 +100,5 @@ if(isset($_GET['d'])){
         </nav>  
     </header>
     <div class="row mb-3 pb-2">
-        <section class="p-4 col-12 col-md-10 container justify-content-center">
+        <section class="p-4  mt-2 col-12 col-md-10 container justify-content-center">
            <article class="row">

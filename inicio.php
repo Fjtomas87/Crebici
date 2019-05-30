@@ -1,25 +1,10 @@
-<?php
-
-$p = "inicio";
-
-
-if(isset($_GET['p'])){
-	$p=$_GET['p'];
-}
-
-if(isset($_POST['heLlamado'])){
-    echo "La llamada ha salido bien";
-}
-
-?>
-<div>
+<div class="opac p-3 m-3 border rounded">
     <h2>Nuevos modelos</h2>
-    <div class='divEjemplo'></div>
-    <button type='button' class='botondeprueba'>Dale loco</button>
+   
 
     <!-- slideshow de imagenes con libreria wowslider de jquery  -->
-<div id="wowslider-container1">
-    <div class="ws_images">
+    <div id="wowslider-container1">
+        <div class="ws_images">
            <ul>
                 <li><img src="data1/images/bh_beartrack.jpg" alt="BH Beartrack" title="BH Beartrack" id="wows1_0"/></li>
                 <li><img src="data1/images/bh_beartrakjet.jpg" alt="BH BeartrakJet" title="BH BeartrakJet" id="wows1_1"/></li>
@@ -43,8 +28,7 @@ if(isset($_POST['heLlamado'])){
             <a href="#wows1_7" title="Kross Pulso"><span><img src="data1/tooltips/kross_pulso.jpg" alt="Kross Pulso"/>8</span></a>
             </div>
         </div>
-
-</div>	
+    </div>	
 <script type="text/javascript" src="engine1/wowslider.js"></script>
 <script type="text/javascript" src="engine1/script.js"></script>
 <!--  -->
