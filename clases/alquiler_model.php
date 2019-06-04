@@ -15,7 +15,14 @@ class Alquiler extends DBAbstractModel {
 	public function getAlquileres(){
 		return $this->rows;
 	}
-    
+    public function getByIdC($idC='') {
+        $this->query = "
+        SELECT idA, fechaIni, dias, idC, idBici, estado
+        FROM alquiler
+        WHERE idC = '$idC'
+        ";
+        $this->get_results_from_query();
+    }
     public function getTodos(){
         $this->query = "
         SELECT *

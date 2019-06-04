@@ -270,3 +270,6 @@ function validar(campo){
         }
     }
 }
+function emailRepetido(){
+    alert("Ese Email ya esta en uso.")
+}

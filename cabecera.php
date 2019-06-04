@@ -59,7 +59,7 @@ if(isset($_GET['d'])){
                                         <div class="dropdown-menu">
                                             <a href="index.php?p=cuentas" class="dropdown-item btn">Usuarios</a>
                                             <a href="index.php?p=alquiler" class="dropdown-item btn">Alquileres</a>
-                                            <a href="index.php?p=factu" class="dropdown-item btn">Facturacion</a>
+                                            <a href="facturacion.php" class="dropdown-item btn">Facturacion</a>
                                             <a href="index.php?p=user" class="dropdown-item btn">Cuenta</a>
                                             <a href="index.php?d=1" class="dropdown-item btn">Cerrar sesion</a>
                                         </div>

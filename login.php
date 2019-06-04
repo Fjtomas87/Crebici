@@ -11,6 +11,7 @@ if(isset($_POST['login'])){
             $_SESSION['idC'] = $usuario->getIdC();
         }else{
             $_SESSION['email'] = $usuario->getEmail();
+            $_SESSION['idC'] = $usuario->getIdC();
         }
         
         

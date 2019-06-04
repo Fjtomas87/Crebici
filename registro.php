@@ -13,8 +13,12 @@ if(isset($_POST['registrar'])){
     
     if($usuario->getEmail()!=null){
         $_SESSION['email'] = $usuario->getEmail();
+        $_SESSION['idC'] = $usuario->getIdC();
         header("Location: index.php");
     }else{
+        $msg = "El email ya esta registrado";
+        
+        echo "<script> emailRepetido() </script>";
         
     }
     
@@ -81,6 +85,7 @@ if(isset($_POST['registrar'])){
         </div>
     </div>
     <br>
+   
     <input type="button" value="Verificar" id="verificar2" name="verificar2" class="btn btn-warning">
     <input type="submit" value="Registrar" id="registrar" name="registrar" class="btn btn-warning d-none">
 </form>
