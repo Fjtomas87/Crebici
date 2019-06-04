@@ -4,11 +4,11 @@ $mes=date("m");
 $dia=date("d");
 $anyo=date("Y");
 if(isset($_POST['alquiler'])){
-    //no es necesario validar
-    
-    $alquiler_data=array('fecha'=>$_POST['fechaIni'],'idC'=>$_SESSION['idC'],'idBici'=>$_GET['b'],'estado'=>"reservado");
+    var_dump($_POST["dias"]);
+    var_dump($_POST['fechaIni']);
+    $alquiler_data=array('fechaIni'=>$_POST['fechaIni'],'dias'=>$_POST['dias'],'idC'=>$_SESSION['idC'],'idBici'=>$_GET['b'],'estado'=>"reservado");
     $alquiler = new Alquiler();
-    $alquiler->set();
+    $alquiler->set($alquiler_data);
     
 }
 
@@ -22,13 +22,13 @@ if(isset($_SESSION['email'])){
             <form action="index.php?p=reserva&b=<?php echo $_GET['b'] ?>" method="post" class="">
                 <div class="form-group row">
                     <label for="fechaIni" class="col-3 col-sm-2 col-form-label">Fecha</label>
-                    <div class="col-9">
-                        <input class="form-control  w-md-25" type="date" min="<?php echo $anyo,"-",$mes,"-",$dia; ?>" value="<?php echo $anyo,"-",$mes,"-",$dia; ?>" id="fechaIni">
+                    <div class="col-9 div-input">
+                        <input class="form-control col-sm-8 m-auto" type="date" min="<?php echo $anyo,"-",$mes,"-",$dia; ?>" value="<?php echo $anyo,"-",$mes,"-",$dia; ?>" id="fechaIni" name="fechaIni">
                     </div>
                 </div>
                 <div class=" row form-group">
-                    <label for="fechaIni" class="col-3 col-sm-2 col-form-label mr-3">Duracion</label>
-                    <select class="col-5 form-control custom-select ml-3 ml-sm-0" name="dias" id="dias">
+                    <label for="fechaIni" class="col-3 col-sm-2 col-form-label">Duracion</label>
+                    <select class="col-5 form-control custom-select col-sm-8 m-auto" name="dias" id="dias">
                         <option value="1">Uno</option>
                         <option value="2">Dos</option>
                         <option value="3">Tres</option>
@@ -39,7 +39,7 @@ if(isset($_SESSION['email'])){
                     </select>
                 </div>
                 <div class="row form-group justify-content-center w-md-25  ">
-                <input type="submit" id="reservarB" class="btn-warning" value="Reservar" name="alquiler">
+                <input type="submit" id="alquiler" class="btn-warning" value="Reservar" name="alquiler">
                 </div>
             </form>
         </div>

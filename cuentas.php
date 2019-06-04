@@ -23,7 +23,7 @@ if(isset($_SESSION['usuario'])){
         
            <div class="col-11 mx-auto" style="overflow-x: auto">
               <h2 class="text-center">Cuentas Usuarios</h2>
-               <table class="table table-hover bg-info p-3 m-3 mx-auto" style="width:auto" id="tablaUsuarios">
+               <table class="table table-hover opac p-3 m-3 mx-auto" style="width:auto" id="tablaUsuarios">
                   <thead>
                        <tr>
                            <th>Nombre</th>

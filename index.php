@@ -35,6 +35,15 @@ if($p=="reserva"){
 if($p=="cuentas"){
 	include("cuentas.php");
 }
+if($p=="alquiler"){
+	include("alquiler.php");
+}
+if($p=="mreservas"){
+	include("mreservas.php");
+}
+if($p=="factu"){
+	include("facturacion.php");
+}
 
 ?>			
 	

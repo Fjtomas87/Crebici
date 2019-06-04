@@ -47,7 +47,7 @@ if(isset($_GET['d'])){
                     <li class="nav-item"><a href="index.php?p=catalogo" class="nav-link btn">Catalogo</a></li>
                     <li class="nav-item"><a href="" class="nav-link btn">Link 2</a></li>
                     <li class="nav-item"><a href="" class="nav-link btn">Link 3</a></li>
-                    <li class="nav-item"><a href="" class="nav-link btn">Link 4</a></li>
+                    <li class="nav-item"><a href="index.php?p=mreservas" class="nav-link btn">Reservas</a></li>
                     <?php
                     
                     if(isset($_SESSION['email'])){
