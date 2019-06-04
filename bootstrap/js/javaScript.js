@@ -36,6 +36,11 @@ $(document).ready(function(){
     $("#tipoUser").click(function(){
         botones();
     });
+    
+    $("#email").focusout(function(){
+        validar("email");
+        botones();
+    });
   
     $("#verificar").on("click", function(){
         var v1 = validar("nombre");
