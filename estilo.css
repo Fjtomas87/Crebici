@@ -5,9 +5,16 @@ body{
 .opac-7{
     opacity: 0.7;
 }
+
+
+
 .opac{
     border-width:3px !important;
     background-color: rgba(255,255,255,0.9);
+}
+.orange{
+    border-width:3px !important;
+    background-color: rgba(255,193,7,0.7);
 }
 .biciCata *{
     color: black;

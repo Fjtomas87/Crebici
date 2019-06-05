@@ -1,5 +1,5 @@
 <div class="opac p-3 m-3 border rounded">
-    <h2>Nuevos modelos</h2>
+    <h2 class="text-center">Nuevos modelos</h2>
    
 
     <!-- slideshow de imagenes con libreria wowslider de jquery  -->

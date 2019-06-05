@@ -5,12 +5,12 @@ $bici = new Bici();
 $bici->getTodos();
 $rows=$bici->getBicis();
 ?>
-    <div class="row justify-content-between mx-auto">
+    <div class="row justify-content-around mx-auto ">
     
 <?php
     foreach($rows as $row){
 ?>
-    <div class="m-2 p-4 col-9 col-sm-5 col-md-3 border opac biciCata rounded">
+    <div class="m-2 p-4 col-9 col-sm-5 col-lg-3 border opac biciCata rounded">
         <a href="index.php?p=bici&b=<?php echo $row['idBici']; ?>" class="link-bicis">
             <img src="<?php echo $row['foto']; ?>" class="img-fluid rounded img-thumbnail mb-2" alt="Bicicleta <?php echo $row['marca'] ?>">
                 <h2 class="text-center"><?php echo $row['marca'], " ", $row['modelo']; ?></h2>

@@ -15,9 +15,10 @@ if(isset($_GET['d'])){
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SEO incompleto">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Crebici es la mejor (unica) tienda de alquiler de bicicletas en Crevillente donde podras alquilar las mejoras bicicletas del mercado.">
+    <meta name="keywords" content="Alquiler Bicicletas Bicicleta Electrica Bicicleta montaña Bicicleta Carretera BH Kross Madison Cube">
     <!-- JavaScript Jquery -->
     <!-- Start WOWSlider.com HEAD section -->
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />

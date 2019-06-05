@@ -19,7 +19,7 @@ class Bici extends DBAbstractModel {
 	}
 	public function getTodos() {
 		$this->query = "
-		SELECT idBici, marca, tipo, modelo, descrip, peso, pvp, foto, idC
+		SELECT idBici, marca, tipo, modelo, descrip, peso, pvp, foto
 		FROM bicis";
 		$this->get_results_from_query(); 
 		
@@ -27,7 +27,7 @@ class Bici extends DBAbstractModel {
     public function getBiciByTipo($tipo='', $idBici='') {
        
             $this->query = "
-            SELECT idBici, marca, tipo, modelo, descrip, peso, pvp, foto, idC
+            SELECT idBici, marca, tipo, modelo, descrip, peso, pvp, foto
             FROM bicis
             WHERE tipo = '$tipo' AND idBici != '$idBici' LIMIT 3
             ";
@@ -36,7 +36,7 @@ class Bici extends DBAbstractModel {
     public function get($idBici='') {
         if($idBici != ''){
             $this->query = "
-            SELECT idBici, marca, tipo, modelo, descrip, peso, pvp, foto, idC
+            SELECT idBici, marca, tipo, modelo, descrip, peso, pvp, foto
             FROM bicis
             WHERE idBici = '$idBici'
             ";

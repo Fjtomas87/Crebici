@@ -2,22 +2,38 @@
 if(isset($_GET['b'])){
     $bici = new Bici();
     $bici->get($_GET['b']);
+    $descrip = $bici->getDescrip();
+    $desc = explode("-", $descrip);
 ?>
-    
-<div class="row mt-4 p-3 m-3 opac rounded text-center" >
-    <div class="col-10 col-sm-6 col-md-4">
+   <div> 
+<div class="row m-1 mt-4 p-3 opac rounded text-center" >
+    <div class="col-10 col-sm-6 col-md-5">
         <img src=" <?php echo $bici->getFoto(); ?>" id="imagenBici" alt="Bicicleta<?php echo $bici->getMarca(); ?>" class="img-fluid rounded img-thumbnail">
     </div>
-    <div class="col-10 col-sm-6">
+    <div class="col-10 col-sm-7">
         <h3><?php echo $bici->getMarca(), " ", $bici->getModelo(); ?> </h3>
-        <span><?php echo $bici->getDescrip() ?></span>
         <h3>Precio: <?php echo $bici->getPvp() ?> €/dia</h3>
+            <div class="container text-center">
+            <h3 class="mt-3">Descripción</h3>
+            <ul>
+            <?php
+            
+            for($i =0; $i< count($desc);$i++){
+                
+                echo "<li class='row'>";
+                echo "<span class='col text-capitalize'>".$desc[$i]."</span>";
+                echo "</li>";
+            }
+
+            ?>
+            </ul>
+        </div>
         <form action="index.php?p=reserva&b=<?php echo $bici->getIdBici(); ?>" method="post">
-            <button class="btn-outline-primary bg-warning" type="submit" name="reservar">Reservar</button>
+            <button class="btn-outline-primary bg-warning my-4" type="submit" name="reservar">Reservar</button>
         </form>
     </div> 
 </div> 
-<div class="row m-2 mt-5 bg-warning mx-auto rounded">
+<div class="row m-3 p-3 orange  mx-auto rounded">
   <h2 class="col-12" style="text-align:center">Productos relacionados</h2>
     
         <?php
@@ -31,7 +47,7 @@ if(isset($_GET['b'])){
         <div class="col-12 col-md-3 m-3 p-3 opac rounded border">
             <a href="index.php?p=bici&b=<?php echo $row['idBici'] ?>">
                 <h3><?php echo $row['marca']," ", $row['modelo']; ?></h3>
-                <img src="<?php echo $row['foto']; ?>" alt="Bicicleta <?php echo $row['marca']; ?>" class="img-fluid rounded img-thumbnail">
+                <img src="<?php echo $row['foto']; ?>" alt="Bicicleta <?php echo $row['marca']; ?>" class="img-fluid opac-0 rounded img-thumbnail">
             </a>
         </div>
         <?php
@@ -39,7 +55,8 @@ if(isset($_GET['b'])){
         ?>
    
     
-</div>   
+</div> 
+   </div>  
     
   <?php  
 }
