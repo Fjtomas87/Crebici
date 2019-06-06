@@ -47,8 +47,8 @@ if(isset($_SESSION['usuario'])){
                </table>
                <span id="msg" class="msg"><?php echo $msg; ?></span> 
            </div>
-           <div class="container perfil d-none m-auto border text-center opac" id="formVista">
-                        <form action="index.php?p=cuentas" method="POST" id="form0" class="m-3 p-3 border form">
+           <div class="container perfil d-none m-auto border rounded text-center opac" id="formVista">
+                        <form action="index.php?p=cuentas" method="POST" id="form0" class="m-3 p-3 form">
                            <h2 class="text-center">Datos Usuario</h2>
                             <div class="form-group">
                                 <label class="control-label  p-1 mt-2" for="idC">Id</label>

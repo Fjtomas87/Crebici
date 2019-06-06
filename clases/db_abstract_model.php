@@ -18,6 +18,7 @@ abstract class DBAbstractModel {
 	private function open_connection() {
 		$this->conn = new mysqli(self::$db_host, self::$db_user,
 		self::$db_pass, $this->db_name);
+        $this->conn->query("SET NAMES 'utf8'");
 	}
 	# Desconectar la base de datos
 	private function close_connection() {

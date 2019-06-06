@@ -5,15 +5,17 @@ if(isset($_GET['b'])){
     $descrip = $bici->getDescrip();
     $desc = explode("-", $descrip);
 ?>
-   <div> 
-<div class="row m-1 mt-4 p-3 opac rounded text-center" >
+   <div class="mt-3"> 
+   <h1 class="text-center mb-4" >Alquiler</h1>
+<div class="row m-1 p-3 opac rounded text-center" >
     <div class="col-10 col-sm-6 col-md-5">
         <img src=" <?php echo $bici->getFoto(); ?>" id="imagenBici" alt="Bicicleta<?php echo $bici->getMarca(); ?>" class="img-fluid rounded img-thumbnail">
+        <h3 class="mt-3">Precio: <?php echo $bici->getPvp() ?> €/dia</h3>
     </div>
     <div class="col-10 col-sm-7">
         <h3><?php echo $bici->getMarca(), " ", $bici->getModelo(); ?> </h3>
-        <h3>Precio: <?php echo $bici->getPvp() ?> €/dia</h3>
-            <div class="container text-center">
+        
+            <div class="container border rounded">
             <h3 class="mt-3">Descripción</h3>
             <ul>
             <?php
@@ -21,7 +23,7 @@ if(isset($_GET['b'])){
             for($i =0; $i< count($desc);$i++){
                 
                 echo "<li class='row'>";
-                echo "<span class='col text-capitalize'>".$desc[$i]."</span>";
+                echo "<span class='col text-capitalize text-justify'>".$desc[$i]."</span>";
                 echo "</li>";
             }
 
@@ -33,7 +35,7 @@ if(isset($_GET['b'])){
         </form>
     </div> 
 </div> 
-<div class="row m-3 p-3 orange  mx-auto rounded">
+<div class="row mt-3 p-3 orange  mx-auto rounded">
   <h2 class="col-12" style="text-align:center">Productos relacionados</h2>
     
         <?php

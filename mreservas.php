@@ -17,7 +17,7 @@ if(isset($_SESSION['idC'])){
     
     <div class="col-11 mx-auto" style="overflow-x: auto">
                     <h2 class="text-center">Cuentas Usuarios</h2>
-                    <table class="table table-hover opac p-3 m-3 mx-auto text-center" style="width:auto" id="tablaUsuarios">
+                    <table class="table table-hover opac p-3 m-3 mx-auto text-center" style="width:auto" id="tablaReservas">
                         <thead>
                             <tr>
                                 <th>ID Alquiler</th>
@@ -45,7 +45,7 @@ if(isset($_SESSION['idC'])){
                                 ?>
                                 <td>
                                     <input name="idAlq" class="d-none" type="text" value="<?php echo $row['idA']; ?>">
-                                    <input type="submit" name="cancelAlq" id="<?php echo $row['idA'] ?>" value="Cancelar Alquiler">
+                                    <input type="submit" name="cancelAlq" id="<?php echo $row['idA'] ?>" value="Cancelar">
                                 </td>
                                 
                                 <?php

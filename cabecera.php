@@ -39,15 +39,32 @@ if(isset($_GET['d'])){
  
 <body class="container">
     <header class="row mb-4 pb-3">
-        <nav class="col-12 navbar navbar-expand-md navbar-light bg-light fixed-top rounded-bottom">
+        <nav class="col-12 navbar navbar-expand-md navsup navbar-light bg-light fixed-top rounded-bottom">
             <a href="index.php" class="navbar-brand ml-sm-5"><img src="imagen/logo.jpg" style="width:50px"></a>
             <a href="index.php" class="navbar-brand ">CREBICI</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu"><span class="bt-nav navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav d-flex justify-content-around">
                     <li class="nav-item"><a href="index.php?p=catalogo" class="nav-link btn">Catalogo</a></li>
-                    <li class="nav-item"><a href="" class="nav-link btn">Link 2</a></li>
-                    <li class="nav-item"><a href="" class="nav-link btn">Link 3</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbardropmarca">Marca</a>
+                        <div class="dropdown-menu">
+                            <a href="index.php?p=catalogo&m=BH" class="dropdown-item btn">BH</a>
+                            <a href="index.php?p=catalogo&m=Madison" class="dropdown-item btn">Madison</a>
+                            <a href="index.php?p=catalogo&m=Cube" class="dropdown-item btn">Cube</a>
+                            <a href="index.php?p=catalogo&m=Kross" class="dropdown-item btn">Kross</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbardroptipo">Tipo</a>
+                        <div class="dropdown-menu">
+                            <a href="index.php?p=catalogo&t=Carretera" class="dropdown-item btn">Carretera</a>
+                            <a href="index.php?p=catalogo&t=Montaña" class="dropdown-item btn">Montaña</a>
+                            <a href="index.php?p=catalogo&t=Electrica" class="dropdown-item btn">Electrica</a>
+                            <a href="index.php?p=catalogo&t=Plegable" class="dropdown-item btn">Plegable</a>
+                            <a href="index.php?p=catalogo&t=Niños" class="dropdown-item btn">Niños</a>
+                        </div>
+                    </li>
                     <li class="nav-item"><a href="index.php?p=mreservas" class="nav-link btn">Reservas</a></li>
                     <?php
                     
@@ -100,6 +117,6 @@ if(isset($_GET['d'])){
             </div> 
         </nav>  
     </header>
-    <div class="row mb-3 pb-2">
-        <section class="p-4  mt-2 col-12 col-md-10 container justify-content-center">
+    <div class="row opac mt-4">
+        <section class="p-4  mt-2 col-12 col-md-9 container justify-content-center">
            <article class="row">

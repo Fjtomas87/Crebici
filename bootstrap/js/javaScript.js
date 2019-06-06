@@ -133,6 +133,10 @@ $(document).ready(function(){
                     temperatura = data.main.temp;
                     humedad = data.main.humidity;
                     ciudad = data.name;
+                
+                var hora = new Date().getHours();
+                var min = new Date().getMinutes();
+                $('.hora').html(hora+":"+min);
                 $('.temp').html(temperatura + " ºC");
                 $('.ciu').html(ciudad);
                 $('.hum').html(humedad + "% humedad");
