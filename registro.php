@@ -1,9 +1,5 @@
 <?php
 if(isset($_POST['registrar'])){
-  
-    echo "<script>";
-    echo "MiFuncionJS();";
-    echo "</script>";
     $user_data=array('nombre'=>$_POST['nombre'],'apellido1'=>$_POST['apellido1'],'apellido2'=>$_POST['apellido2'],'email'=>$_POST['email'],'pass'=>$_POST['pass1'],'dni'=>$_POST['dni'],'direccion'=>$_POST['direccion'],'tipoUser'=>'Cliente');
 	$usuario=new Usuario();
 	$usuario->set($user_data);

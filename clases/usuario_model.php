@@ -24,7 +24,7 @@ class Usuario extends DBAbstractModel {
         $this->get_results_from_query();
     }
     
-    public function getUser($email, $pass) {
+    public function getUser($email='', $pass='') {
 		
         $this->query = "
         SELECT idC, nombre, email, apellido1, apellido2, dni, direccion, tipoUser

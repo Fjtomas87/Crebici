@@ -1,22 +1,21 @@
 <?php
+ob_start();
 session_start();
-
 if(isset($_GET['d'])){
     if($_GET['d']==1){
         session_unset();
         session_destroy();
     }
 }
-    
-    require('clases/usuario_model.php');
-	require('clases/bici_model.php');
-	require('clases/alquiler_model.php');
+require('clases/usuario_model.php');
+require('clases/bici_model.php');
+require('clases/alquiler_model.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Crebici es la mejor (unica) tienda de alquiler de bicicletas en Crevillente donde podras alquilar las mejoras bicicletas del mercado.">
     <meta name="keywords" content="Alquiler Bicicletas Bicicleta Electrica Bicicleta montaña Bicicleta Carretera BH Kross Madison Cube">
     <!-- JavaScript Jquery -->
@@ -32,11 +31,7 @@ if(isset($_GET['d'])){
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="estilo.css" />
     <title>Cribici</title>
-  </head>
-<head>
-
-</head>
- 
+  </head> 
 <body class="container">
     <header class="row mb-4 pb-3">
         <nav class="col-12 navbar navbar-expand-md navsup navbar-light bg-light fixed-top rounded-bottom">
@@ -89,7 +84,7 @@ if(isset($_GET['d'])){
                         }else{
                             ?>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link  btn dropdown-toggle" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['email']; ?> </a>
+                                <a href="#" class="nav-link btn dropdown-toggle" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['email']; ?> </a>
                                     <div class="dropdown-menu">
                                         <a href="index.php?p=user" class="dropdown-item btn">Cuenta</a>
                                         <a href="index.php?d=1" class="dropdown-item btn">Cerrar sesion</a>
@@ -112,7 +107,6 @@ if(isset($_GET['d'])){
                         <?php
                     }
                     ?>
-                    
                 </ul>
             </div> 
         </nav>  

@@ -2,9 +2,7 @@
 if(isset($_POST['login'])){
     $usuario=new Usuario();
 	$usuario->getUser($_POST['email'],$_POST['pass1']);
-    
     if($usuario->getEmail()!=null){
-        //Si a tenido existo el INSERT creamos las sesiones segund el tipo de user 
         if($usuario->getTipoUser()=="admin"){
             $_SESSION['usuario'] = $usuario->getTipoUser();
             $_SESSION['email'] = $usuario->getEmail();
@@ -13,16 +11,11 @@ if(isset($_POST['login'])){
             $_SESSION['email'] = $usuario->getEmail();
             $_SESSION['idC'] = $usuario->getIdC();
         }
-        
-        
-        
-        //cambio host
         header("Location: index.php");
     }else{
         echo "<script>";
         echo "loginFail();";
         echo "</script>";
-        
         ?>
         
         <form action="index.php?p=login" method="POST" class="container">

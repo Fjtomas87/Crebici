@@ -1,13 +1,6 @@
 <?php
-
-
-	include('cabecera.php');
-	
-?>
-					
-<?php
+include('cabecera.php');
 $p = "inicio";
-
 if(isset($_GET['p'])){
 	$p=$_GET['p'];
 }
@@ -18,7 +11,7 @@ if($p=="catalogo"){
 	include("catalogo.php");
 }
 if($p=="login"){
-	include("login.php");
+    include("login.php");
 }
 if($p=="registro"){
 	include("registro.php");
@@ -44,9 +37,5 @@ if($p=="mreservas"){
 if($p=="factu"){
 	include("facturacion.php");
 }
-
-?>			
-	
-<?php
-	include_once('footer.php');
+include('footer.php');
 ?>
