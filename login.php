@@ -11,7 +11,7 @@ if(isset($_POST['login'])){
             $_SESSION['email'] = $usuario->getEmail();
             $_SESSION['idC'] = $usuario->getIdC();
         }
-        header("Location: ".$_SERVER['PHP_SELF']);
+        header("Location: ".$_SERVER['PHP_SELF']."?p=inicio");
     }else{
         echo "<script>";
         echo "loginFail();";
