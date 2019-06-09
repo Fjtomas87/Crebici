@@ -7,7 +7,7 @@ if(isset($_POST['alquiler'])){
     $alquiler_data=array('fechaIni'=>$_POST['fechaIni'],'dias'=>$_POST['dias'],'idC'=>$_SESSION['idC'],'idBici'=>$_GET['b'],'estado'=>"reservado");
     $alquiler = new Alquiler();
     $alquiler->set($alquiler_data);
-    header("Location: index.php?p=mreservas");
+    header("Location: ".$_SERVER['PHP_SELF']."?p=mreservas");
 }
 
 if(isset($_SESSION['email'])){
@@ -17,7 +17,7 @@ if(isset($_SESSION['email'])){
         ?>
         <div class="container mt-5 text-center rounded border opac">
            <h1 class="mt-5 ">Formulario de reserva</h1>
-            <form action="index.php?p=reserva&b=<?php echo $_GET['b'] ?>" method="post" class="">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>?p=reserva&b=<?php echo $_GET['b'] ?>" method="post" class="">
                 <div class="form-group row">
                     <label for="fechaIni" class="p-1 mt-2 mx-auto">Fecha</label>
                     <div class="col-12 div-input">
@@ -50,8 +50,8 @@ if(isset($_SESSION['email'])){
 <div class="container">
     <h1 class="m-3 p-3">Registrate para acceder a nustro servicio de reserva</h1>
     <div class=" m-3 p-3 justify-content-center">
-        <a href="index.php?p=registro" class="bg-warning p-2">Registrar</a>
-        <a href="index.php?p=login" class="bg-warning p-2">Acceder</a>
+        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=registro" class="bg-warning p-2">Registrar</a>
+        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=login" class="bg-warning p-2">Acceder</a>
     </div>
                        
 </div>

@@ -10,7 +10,7 @@ if(isset($_POST['registrar'])){
     if($usuario->getEmail()!=null){
         $_SESSION['email'] = $usuario->getEmail();
         $_SESSION['idC'] = $usuario->getIdC();
-        header("Location: index.php");
+        header("Location: ".$_SERVER['PHP_SELF']);
     }else{
         $msg = "El email ya esta registrado";
         
@@ -22,7 +22,7 @@ if(isset($_POST['registrar'])){
 
 ?>
 <div class="container justify-content-center text-center border opac">
-<form action="index.php?p=registro" method="POST" class="m-1 p-1 container justify-content-center">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>?p=registro" method="POST" class="m-1 p-1 container justify-content-center">
     <h1 class="col-12">FORMULARIO DE REGISTRO</h1>
     <div class="form-group">
         <label class="p-1 mt-2" for="nombre">Nombre</label>

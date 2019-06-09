@@ -35,32 +35,32 @@ require('clases/alquiler_model.php');
 <body class="container">
     <header class="row mb-4 pb-3">
         <nav class="col-12 navbar navbar-expand-md navsup navbar-light bg-light fixed-top rounded-bottom">
-            <a href="index.php" class="navbar-brand ml-sm-5"><img src="imagen/logo.jpg" style="width:50px"></a>
-            <a href="index.php" class="navbar-brand ">CREBICI</a>
+            <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="navbar-brand ml-sm-5"><img src="imagen/logo.jpg" style="width:50px"></a>
+            <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="navbar-brand ">CREBICI</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu"><span class="bt-nav navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav d-flex justify-content-around">
-                    <li class="nav-item"><a href="index.php?p=catalogo" class="nav-link btn">Catalogo</a></li>
+                    <li class="nav-item"><a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=catalogo" class="nav-link btn">Catalogo</a></li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbardropmarca">Marca</a>
                         <div class="dropdown-menu">
-                            <a href="index.php?p=catalogo&m=BH" class="dropdown-item btn">BH</a>
-                            <a href="index.php?p=catalogo&m=Madison" class="dropdown-item btn">Madison</a>
-                            <a href="index.php?p=catalogo&m=Cube" class="dropdown-item btn">Cube</a>
-                            <a href="index.php?p=catalogo&m=Kross" class="dropdown-item btn">Kross</a>
+                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=catalogo&m=BH" class="dropdown-item btn">BH</a>
+                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=catalogo&m=Madison" class="dropdown-item btn">Madison</a>
+                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=catalogo&m=Cube" class="dropdown-item btn">Cube</a>
+                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=catalogo&m=Kross" class="dropdown-item btn">Kross</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbardroptipo">Tipo</a>
                         <div class="dropdown-menu">
-                            <a href="index.php?p=catalogo&t=Carretera" class="dropdown-item btn">Carretera</a>
-                            <a href="index.php?p=catalogo&t=Montaña" class="dropdown-item btn">Montaña</a>
-                            <a href="index.php?p=catalogo&t=Electrica" class="dropdown-item btn">Electrica</a>
-                            <a href="index.php?p=catalogo&t=Plegable" class="dropdown-item btn">Plegable</a>
-                            <a href="index.php?p=catalogo&t=Niños" class="dropdown-item btn">Niños</a>
+                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=catalogo&t=Carretera" class="dropdown-item btn">Carretera</a>
+                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=catalogo&t=Montaña" class="dropdown-item btn">Montaña</a>
+                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=catalogo&t=Electrica" class="dropdown-item btn">Electrica</a>
+                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=catalogo&t=Plegable" class="dropdown-item btn">Plegable</a>
+                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=catalogo&t=Niños" class="dropdown-item btn">Niños</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="index.php?p=mreservas" class="nav-link btn">Reservas</a></li>
+                    <li class="nav-item"><a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=mreservas" class="nav-link btn">Reservas</a></li>
                     <?php
                     
                     if(isset($_SESSION['email'])){
@@ -70,11 +70,11 @@ require('clases/alquiler_model.php');
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['usuario']; ?> </a>
                                         <div class="dropdown-menu">
-                                            <a href="index.php?p=cuentas" class="dropdown-item btn">Usuarios</a>
-                                            <a href="index.php?p=alquiler" class="dropdown-item btn">Alquileres</a>
+                                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=cuentas" class="dropdown-item btn">Usuarios</a>
+                                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=alquiler" class="dropdown-item btn">Alquileres</a>
                                             <a href="facturacion.php" class="dropdown-item btn">Facturacion</a>
-                                            <a href="index.php?p=user" class="dropdown-item btn">Cuenta</a>
-                                            <a href="index.php?d=1" class="dropdown-item btn">Cerrar sesion</a>
+                                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=user" class="dropdown-item btn">Cuenta</a>
+                                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?d=1" class="dropdown-item btn">Cerrar sesion</a>
                                         </div>
                                 </li>
                         
@@ -86,8 +86,8 @@ require('clases/alquiler_model.php');
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link btn dropdown-toggle" data-toggle="dropdown" id="navbardrop1"><?php echo $_SESSION['email']; ?> </a>
                                     <div class="dropdown-menu">
-                                        <a href="index.php?p=user" class="dropdown-item btn">Cuenta</a>
-                                        <a href="index.php?d=1" class="dropdown-item btn">Cerrar sesion</a>
+                                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=user" class="dropdown-item btn">Cuenta</a>
+                                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?d=1" class="dropdown-item btn">Cerrar sesion</a>
                                     </div>
                             </li>
                         
@@ -100,8 +100,8 @@ require('clases/alquiler_model.php');
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbardrop2">Cuenta</a>
                                 <div class="dropdown-menu btn">
-                                    <a href="index.php?p=registro" class="dropdown-item btn">Registrar</a>
-                                    <a href="index.php?p=login" class="dropdown-item btn">Acceder</a>
+                                    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=registro" class="dropdown-item btn">Registrar</a>
+                                    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=login" class="dropdown-item btn">Acceder</a>
                                 </div>
                         </li>
                         <?php

@@ -33,7 +33,7 @@ if(isset($_SESSION['idC'])){
                        foreach($rows as $row){
                        ?>
                            <tr>
-                                <form action="index.php?p=mreservas" method="POST">
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>?p=mreservas" method="POST">
                                 <td><?php echo $row['idA']; ?></td>
                                 <td><?php echo $row['fechaIni']; ?></td>
                                 <td><?php echo $row['dias']; ?></td>

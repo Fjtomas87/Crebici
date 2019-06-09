@@ -11,14 +11,14 @@ if(isset($_POST['login'])){
             $_SESSION['email'] = $usuario->getEmail();
             $_SESSION['idC'] = $usuario->getIdC();
         }
-        header("Location: index.php");
+        header("Location: ".$_SERVER['PHP_SELF']);
     }else{
         echo "<script>";
         echo "loginFail();";
         echo "</script>";
         ?>
         
-        <form action="index.php?p=login" method="POST" class="container">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>?p=login" method="POST" class="container">
             <h2 class="" id="msgOculto">Email o contraseña Incorrectos</h2>
             <div class="form-group">
                 <label class="p-1" for="email">Email</label>
@@ -40,7 +40,7 @@ if(isset($_POST['login'])){
     }
 }else{
     ?>
-    <form action="index.php?p=login" method="POST" class="container">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>?p=login" method="POST" class="container">
        <h2 class="d-none" id="msgOculto">hola</h2>
         <label class="p-1" for="email">Email</label><input type="email" id="email" name="email" class="form-control col-sm-6">
         <label class="p-1" for="pass1">Contraseña</label><input type="password" id="pass1" name="pass1" class="form-control col-sm-6">

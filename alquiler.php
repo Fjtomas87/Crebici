@@ -35,7 +35,7 @@ if(isset($_SESSION['usuario'])){
                        foreach($rows as $row){
                        ?>
                            <tr>
-                                <form action="index.php?p=alquiler" method="POST">
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>?p=alquiler" method="POST">
                                 <td><?php echo $row['idA']; ?></td>
                                 <td><?php echo $row['fechaIni']; ?></td>
                                 <td><?php echo $row['dias']; ?></td>

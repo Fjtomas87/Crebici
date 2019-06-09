@@ -30,7 +30,7 @@ if(isset($_GET['b'])){
             ?>
             </ul>
         </div>
-        <form action="index.php?p=reserva&b=<?php echo $bici->getIdBici(); ?>" method="post">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>?p=reserva&b=<?php echo $bici->getIdBici(); ?>" method="post">
             <button class="btn-outline-primary bg-warning my-4" type="submit" name="reservar">Reservar</button>
         </form>
     </div> 
@@ -47,7 +47,7 @@ if(isset($_GET['b'])){
         foreach($rows as $row){       
         ?>
         <div class="col-12 col-md-3 m-3 p-3 opac rounded border">
-            <a href="index.php?p=bici&b=<?php echo $row['idBici'] ?>">
+            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=bici&b=<?php echo $row['idBici'] ?>">
                 <h3><?php echo $row['marca']," ", $row['modelo']; ?></h3>
                 <img src="<?php echo $row['foto']; ?>" alt="Bicicleta <?php echo $row['marca']; ?>" class="img-fluid opac-0 rounded img-thumbnail">
             </a>

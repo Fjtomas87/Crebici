@@ -4,7 +4,7 @@ if(isset($_POST['modificar'])){
         $usuario=new Usuario();
 	    $usuario->edit($user_data);
         $_SESSION['email'] = $_POST['email'];
-        header("Location: index.php?p=user");
+        header("Location: ".$_SERVER['PHP_SELF']."?p=user");
     }
 if(isset($_SESSION['email'])){
     $user_data=array('email'=>$_SESSION['email']);
@@ -18,7 +18,7 @@ if(isset($_SESSION['email'])){
            
            
                 <div class="row">
-                        <form action="index.php?p=user&e=<?php echo $usuario->getIdC() ?>" method="POST" id="userData" class="perfil col-11  m-3 p-3 m-auto border opac text-center" id="formVista">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>?p=user&e=<?php echo $usuario->getIdC() ?>" method="POST" id="userData" class="perfil col-11  m-3 p-3 m-auto border opac text-center" id="formVista">
                           <h2>Datos usuario</h2><br>
                            <div class="form-group">
                                 <label class="p-1 mt-2" for="nombre">Nombre</label>
