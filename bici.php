@@ -9,7 +9,7 @@ if(isset($_GET['b'])){
    <h1 class="text-center mb-4" >Alquiler</h1>
 <div class="row m-1 p-3 opac rounded text-center" >
     <div class="col-10 col-sm-6 col-md-5">
-        <img src=" <?php echo $bici->getFoto(); ?>" id="imagenBici" alt="Bicicleta<?php echo $bici->getMarca(); ?>" class="img-fluid rounded img-thumbnail">
+        <img src=" <?php echo $bici->getFoto(); ?>" id="imagenBici" alt="Bicicleta<?php echo $bici->getMarca(); ?>" class="img-fluid rounded img-thumbnail mt-md-5">
         <h3 class="mt-3">Precio: <?php echo $bici->getPvp() ?> €/dia</h3>
     </div>
     <div class="col-10 col-sm-7">
@@ -36,7 +36,7 @@ if(isset($_GET['b'])){
     </div> 
 </div> 
 <div class="row mt-3 p-3 orange  mx-auto rounded">
-  <h2 class="col-12" style="text-align:center">Productos relacionados</h2>
+  <h2 class="col-12 text-capitalize" style="text-align:center">Productos relacionados / <?php echo($bici->getTipo()); ?></h2>
     
         <?php
         $tipo=$bici->getTipo();

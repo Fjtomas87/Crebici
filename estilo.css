@@ -37,16 +37,16 @@ footer{
 .green{
     color: green;
 }
+.white{
+    color: white;
+}
 .bg-black{
     background-color: black;
 }
 link-bicis{
   text-decoration: none;
 }
-label, help-block, .custom-select, .help-block{
-    display: inherit !important;
-}
-d-inherit{
+label, help-block, .custom-select, .help-block, d-inherit{
     display: inherit !important;
 }
 #formVista div{

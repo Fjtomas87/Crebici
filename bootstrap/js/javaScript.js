@@ -125,7 +125,7 @@ $(document).ready(function(){
             var longitud = position.coords.longitude;
             $.ajax({
                 type:'GET',
-                url:'http://api.openweathermap.org/data/2.5/weather?lat=' + latitud + '&lon=' + longitud + "&units=metric&appid=9f50a805aa0089a1edd1829a5db029f0",
+                url:'https://api.openweathermap.org/data/2.5/weather?lat=' + latitud + '&lon=' + longitud + "&units=metric&appid=9f50a805aa0089a1edd1829a5db029f0",
                 dataType: 'json'
             })
                 .done(function(data){
