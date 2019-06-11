@@ -18,15 +18,11 @@ require('clases/alquiler_model.php');
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="description" content="Crebici es la mejor (unica) tienda de alquiler de bicicletas en Crevillente donde podras alquilar las mejoras bicicletas del mercado.">
     <meta name="keywords" content="Alquiler Bicicletas Bicicleta Electrica Bicicleta montaña Bicicleta Carretera BH Kross Madison Cube">
-    <!-- JavaScript Jquery -->
-    <!-- Start WOWSlider.com HEAD section -->
-    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
-    <script type="text/javascript" src="engine1/jquery.js"></script>
-    <!-- End WOWSlider.com HEAD section -->
     <!-- Bootstrap CSS -->
     <script src="bootstrap/js/jquery-3.2.1.slim.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/jquery-3.4.1.min.js"></script>
+     <!-- JavaScript Jquery -->
     <script src="bootstrap/js/javaScript.js" ></script>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="estilo.css" />

@@ -34,7 +34,7 @@ if(isset($_GET['m'])){
         <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=bici&b=<?php echo $row['idBici']; ?>" class="link-bicis">
             <img src="<?php echo $row['foto']; ?>" class="img-fluid rounded img-thumbnail mb-2" alt="Bicicleta <?php echo $row['marca'] ?>">
                 <h2 class="text-center"><?php echo $row['marca'], " ", $row['modelo']; ?></h2>
-            <span class="d-flex justify-content-center">Precio: <?php echo $row['pvp'] ?> €/Dia</span>
+            <span class="d-flex justify-content-center">Precio: <?php echo $row['pvp'] ?> €/D</span>
         </a>
     </div>
    

@@ -24,56 +24,56 @@ if(isset($_SESSION['email'])){
                                 <label class="p-1 mt-2" for="nombre">Nombre</label>
                                 <div class="div-input">
                                     <input type="text" name="nombre" id="nombre" value="<?php echo $usuario->getNombre() ?>" class="form-control col-sm-8 m-auto">
-                                    <span class="help-block"></span>
+                                    <span class=""></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="p-1 mt-2" for="apellido1">1º Apellido</label>
                                 <div class="div-input">
                                     <input type="text" id="apellido1" name="apellido1" value="<?php echo $usuario->getApellido1() ?>" class="form-control col-sm-8 m-auto">
-                                    <span class="help-block"></span>
+                                    <span class=""></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="p-1 mt-2" for="apellido2">2º Apellido</label> 
                                 <div class="div-input">
                                     <input type="text" id="apellido2" name="apellido2" value="<?php echo $usuario->getApellido2() ?>" class="form-control col-sm-8 m-auto">
-                                    <span class="help-block"></span>
+                                    <span class=""></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="p-1 mt-2" for="email">Email</label>
                                 <div class="div-input">
                                     <input type="email" id="email" name="email" value="<?php echo $usuario->getEmail() ?>" class="form-control col-sm-8 m-auto">
-                                    <span class="help-block"></span>
+                                    <span class=""></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="p-1 mt-2" for="pass">Nueva Contraseña</label>
                                 <div class="div-input">
                                     <input type="password" id="pass1" name="pass1" value="" class="form-control col-sm-8 m-auto">
-                                    <span class="help-block"></span>
+                                    <span class=""></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="p-1 mt-2" for="pass">Repetir Contraseña</label>
                                 <div class="div-input">
                                     <input type="password" id="pass2" name="pass2" value="" class="form-control col-sm-8 m-auto">
-                                    <span class="help-block"></span>
+                                    <span class=""></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="p-1 mt-2" for="dni">Dni</label>
                                 <div class="div-input">
                                     <input type="text" id="dni" name="dni" value="<?php echo $usuario->getDni() ?>" class="form-control col-sm-8 m-auto">
-                                    <span class="help-block"></span>
+                                    <span class=""></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="p-1 mt-2" for="direccion">Direccion</label>
                                 <div class="div-input">
                                     <input type="text" id="direccion" name="direccion" value="<?php echo $usuario->getDireccion() ?>" class="form-control col-sm-8 m-auto">
-                                    <span class="help-block"></span>
+                                    <span class=""></span>
                                 </div>
                             </div>
                             <input type="button" value="Verificar" id="verificar2" name="verificar2" class="btn btn-warning">

@@ -49,9 +49,9 @@ if(isset($_SESSION['email'])){
 ?>
 <div class="container">
     <h1 class="m-3 p-3">Registrate para acceder a nustro servicio de reserva</h1>
-    <div class=" m-3 p-3 justify-content-center">
-        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=registro" class="bg-warning p-2">Registrar</a>
-        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=login" class="bg-warning p-2">Acceder</a>
+    <div class=" m-3 p-3">
+        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=registro" class="bg-warning btn mr-4">Registrar</a>
+        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?p=login" class="bg-warning btn">Acceder</a>
     </div>
                        
 </div>

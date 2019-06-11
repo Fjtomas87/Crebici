@@ -1,6 +1,7 @@
 $(document).ready(function(){
     
-    
+    //Eventos para validar los inputs de los formularios 
+    //////////////////////////////////////////////////////////////////////////////
     $("#nombre").keyup(function(){
         validar("nombre");
         botones();
@@ -41,7 +42,11 @@ $(document).ready(function(){
         validar("email");
         botones();
     });
-  
+    //////////////////////////////////////////////////////////////////////////////
+    
+    
+    //Funcion para validar el formulario de un usuario para los cambios hecho por el administrador(sin contraseña) 
+    //////////////////////////////////////////////////////////////////////////////
     $("#verificar").on("click", function(){
         var v1 = validar("nombre");
         var v2 = validar("apellido1");
@@ -56,6 +61,11 @@ $(document).ready(function(){
         }
             
     });
+    //////////////////////////////////////////////////////////////////////////////
+    
+    
+    //Función para validar el formulario de registro o de modificación de datos del ususario
+    //////////////////////////////////////////////////////////////////////////////
     $("#verificar2").on("click", function(){
         var v1 = validar("nombre");
         var v2 = validar("apellido1");
@@ -72,21 +82,21 @@ $(document).ready(function(){
         }
             
     });
+    //////////////////////////////////////////////////////////////////////////////
     
     
-    
-    
+    //Función para mostrar los datos de usuario
+    //////////////////////////////////////////////////////////////////////////////
     $(".botonPerfil").on("click",function(){
-        $("#formVista input").css({"color":"black"});
+        $("#formVista input").css({"color":"black"});//Modifica el formulario por si habia validado algun campo
         $("#formVista *").removeClass("green");
         $("#formVista *").removeClass("red");
         $("#formVista input:not([type='button']):not([type='submit'])").css({"background": "white"});
         var id = $(this).attr("id");
-        console.log(id);
         $("#formVista").addClass("d-none");
         botones();
         $(".msg").addClass("d-none");
-        $("#idC").val($("#idC"+id).val());
+        $("#idC").val($("#idC"+id).val());//Rellena el formulario con los datos del usuario seleccionado
         $("#nombre").val($("#nombre"+id).val());
         $("#apellido1").val($("#apellido1"+id).val());
         $("#apellido2").val($("#apellido2"+id).val());
@@ -97,28 +107,11 @@ $(document).ready(function(){
         $("#formVista").removeClass("d-none");
         
     });
-    
-    
-    $(".botondeprueba").on("click", function(e){
-        var x = "prueba X";
-        e.preventDefault();
-        $.ajax({
-            data: {heLlamado: x},
-            url: "../../index.php",
-            type: "POST",
-            cache: false,
-            beforeSend: function(){
-                $(".divEjemplo").html("Cargandooo...");
-            },
-            success: function(response){
-                $(".divEjemplo").html(response);
-            },
-            error: function(response){
-                
-            }
-        });
-    });
+    //////////////////////////////////////////////////////////////////////////////
 
+    
+    //Función para la geolocalización del usuario
+    //////////////////////////////////////////////////////////////////////////////
     if ("geolocation" in navigator){//Comprobamos si la geolocalizacion esta activa
         navigator.geolocation.getCurrentPosition(function(position){//utilizamos el metodo getCurrentPosition() para obtener la ubicación actual del usuario
             var latitud = position.coords.latitude;//Guardamos latitud y longitud
@@ -140,27 +133,32 @@ $(document).ready(function(){
                 $('.temp').html(temperatura + " ºC");
                 $('.ciu').html(ciudad);
                 $('.hum').html(humedad + "% humedad");
-                    
                 })
-            
         });
-        
-        
-        
     }else{
         console.log("El navegador no permite la geolocalizacion.");
     }
-    
- 
-    
+    ////////////////////////////////////////////////////////////////////////////// 
 });
-function botones(){
-    $("#verificar").removeClass("d-none");
-    $("#verificar2").removeClass("d-none");
-    $("#modificar").addClass("d-none");
-    $("#eliminar").addClass("d-none");
-    $("#registrar").addClass("d-none");
-}
+
+
+    //Función que oculta los botones destinados a guardar/cambiar/borrar datos cuando se cambia algun dato de los formualarios
+    //////////////////////////////////////////////////////////////////////////////
+    function botones(){
+        $("#verificar").removeClass("d-none");
+        $("#verificar2").removeClass("d-none");
+        $("#modificar").addClass("d-none");
+        $("#eliminar").addClass("d-none");
+        $("#registrar").addClass("d-none");
+    }
+    //////////////////////////////////////////////////////////////////////////////
+
+
+
+
+//Función encargada de validar los datos recibidos de los inputs
+//Dependiendo del nombre del campo lo valida con su expresion regular
+//////////////////////////////////////////////////////////////////////////////
 function validar(campo){
     if(campo == "nombre" || campo == "apellido1" || campo == "apellido2"){
         var valor = document.getElementById(campo).value;
@@ -174,7 +172,7 @@ function validar(campo){
             $('#'+campo).parent().children('span').addClass("d-none");
             $('#'+campo).parent().parent().addClass("green");
             $('#'+campo).css({"background": "green", "color":"white"});
-            $('#'+campo).parent().children('span').addClass("d-none");
+            $('#'+campo).parent().children('span').text("Campo valido").addClass("d-none");
             return true;
         }
         
@@ -279,6 +277,12 @@ function validar(campo){
         }
     }
 }
+//////////////////////////////////////////////////////////////////////////////
+
+
+//Función para alertar de que el email ya esta en uso
+//////////////////////////////////////////////////////////////////////////////
 function emailRepetido(){
     alert("Ese Email ya esta en uso.")
 }
+//////////////////////////////////////////////////////////////////////////////
