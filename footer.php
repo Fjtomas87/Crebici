@@ -33,7 +33,7 @@
 
            </div>
            <div class="col-12 col-sm-6 col-lg-4 mt-3 p-3">
-                <h3 class="mb-4">¿És buen dia para montar?</h3>
+                <h3 class="mb-4">¿És buen dia para pasear?</h3>
                 <p class="ciu"></p>
                 <p class="hora"></p>
                 <p class="temp"></p>
