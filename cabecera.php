@@ -16,8 +16,8 @@ require('clases/alquiler_model.php');
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta name="description" content="Crebici es la mejor (unica) tienda de alquiler de bicicletas en Crevillente donde podras alquilar las mejoras bicicletas del mercado.">
-    <meta name="keywords" content="Alquiler Bicicletas Bicicleta Electrica Bicicleta montaña Bicicleta Carretera BH Kross Madison Cube">
+    <meta name="description" content="Crebici es la mejor (unica) tienda de alquiler de bicicletas en Crevillente donde podras alquilar las mejores bicicletas del mercado.">
+    <meta name="keywords" content="alquiler bicicletas, bicicleta electrica, bicicleta montaña, bicicleta carretera, bh, kross, madison, cube, alquiler, alquilar, bicicleta, bici, alquiler bici, bici electrica, bici montaña, bici carretera">
     <!-- Bootstrap CSS -->
     <script src="bootstrap/js/jquery-3.2.1.slim.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>

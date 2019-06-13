@@ -12,6 +12,8 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+create database crebici_bd;
+use crebici_bd;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -95,8 +97,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idC`, `nombre`, `email`, `pass`, `apellido1`, `apellido2`, `dni`, `direccion`, `tipoUser`) VALUES
-(1, 'Fco J', 'fjtomas87@gmail.com', '1234', 'Tomas', 'Ferrandez', '74242891H', 'Paseo algo calle 2 p', 'admin'),
-(2, 'Felipe', 'felipe@felipe.com', '1234', 'Perez', 'Oviedo', '74229793F', 'C/ dolar esquina cal', 'cliente');
+(1, 'Admin', 'admin@admin.com', '1234', 'Perez', 'Garcia', '74242891H', 'Paseo algo calle 2 p', 'admin'),
+(2, 'Felipe', 'cliente@cliente.com', '1234', 'Perez', 'Oviedo', '74229793F', 'C/ dolar esquina cal', 'cliente');
 
 --
 -- Índices para tablas volcadas

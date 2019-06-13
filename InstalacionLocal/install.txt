@@ -1,0 +1,11 @@
+
+
+Descomprimir el archivo Crebici.zip en la carpeta localhost.
+Importar la base de datos Crebici.sql en http://localhost/phpmyadmin/
+
+
+
+Usuarios:
+
+	Admin: mail=admin@admin.com  contraseña=1234
+	Cliente: mail=cliente@cliente.com contraseña=1234
