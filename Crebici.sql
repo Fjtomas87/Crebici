@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2019 a las 17:53:26
+-- Tiempo de generación: 14-06-2019 a las 20:47:06
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.12
 
@@ -14,7 +14,6 @@ SET time_zone = "+00:00";
 
 create database crebici_bd;
 use crebici_bd;
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -38,6 +37,21 @@ CREATE TABLE `alquiler` (
   `estado` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `dias` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `alquiler`
+--
+
+INSERT INTO `alquiler` (`idA`, `fechaIni`, `idC`, `idBici`, `estado`, `dias`) VALUES
+(46, '2019-06-10', 1, 3, 'reservado', 3),
+(47, '2019-06-14', 3, 8, 'reservado', 5),
+(48, '2019-06-23', 3, 1, 'reservado', 3),
+(49, '2019-06-24', 7, 6, 'reservado', 5),
+(50, '2019-06-24', 7, 12, 'reservado', 6),
+(51, '2019-06-24', 7, 11, 'reservado', 5),
+(52, '2019-06-30', 5, 4, 'reservado', 6),
+(53, '2019-06-30', 5, 4, 'reservado', 6),
+(54, '2019-06-30', 5, 9, 'reservado', 6);
 
 -- --------------------------------------------------------
 
@@ -72,7 +86,9 @@ INSERT INTO `bicis` (`idBici`, `marca`, `tipo`, `modelo`, `descrip`, `peso`, `pv
 (9, 'BH', 'electrica', 'AtomX', 'CUADRO MTB Alloy 27,5\"-HORQUILLA Rock Shox Judy-POTENCIABH A-Head-DIRECCIÓN Tapered-MANETAS CAMBIOS himano Deore-CAMBIO TRASERO himano XT-FRENO DELANTERO Shimano MT500-FRENO TRASEROShimano MT500-SET RUEDASAlexrims Volar-CUBIERTASSchwalbe Nobby Nic-SILLIN Selle Royal Seta S1-CIERRE SILLIN Quick Release-MANILLAR BH MTB Light Alloy-PUÑOS BH Perform w/ ringlock-PROTECTOR VAINA Integrated SISTEMAX-BATERÍA 700Wh-MOTOR Brose S-AUTONOMÍAUp to 150 Km', '14.00', '14.00', 'imagen/BH_AtomX.jpg'),
 (10, 'BH', 'electrica', 'Xenion', 'CUADRO MTB Alloy-\r\nHORQUILLA SR Suntour-\r\nPOTENCIA BH AHead-\r\nDIRECCIÓN Tapered-\r\nMANETAS CAMBIO Shimano- CAMBIO TRASERO Shimano-\r\nPEDALIER FSA 15T-\r\nCASSETTE Shimano-\r\nCADENA FSA CN910N-\r\nFRENO DELANTERO Shimano-FRENO TRASERO Shimano-\r\nSET RUEDAS Alloy-\r\nCUBIERTAS Schwalbe Nobby- BUJES BH RADIOS Stainless-SILLIN Prologo Kappa-\r\nCIERRE SILLIN Quick Release-\r\nTIJA Alloy 31,6-\r\nMANILLAR BH MTB Alloy-\r\nPUÑOS BH Perform- ringlock PEDALES MTB Alloy-\r\nBATERÍA 500Wh-\r\nMOTOR Bosch CX-\r\nAUTONOMÍA Up to 105 Km', '12.00', '13.00', 'imagen/BH_Xenion.jpg'),
 (11, 'Kross', 'plegable', 'Flex', 'TIPO DE MATERIAL Aluminium-\r\nPESO 13,4 kg-\r\nHORQUILLA Steel 20\"-\r\nAMORTIGUADOR TRASERO-\r\nCUBO DELANTERO Alloy-\r\nBUJE TRASERO Shimano-\r\nCUBIERTAS Mitas V41 Walrus-\r\nLLANTAS Büchel Dynamic-\r\nDESVIADOR DELANTERO-\r\nCAMBIO TRASERO Shimano-\r\nFRENO DELANTERO Tektro-\r\nMANETAS DE FRENO Shimano-\r\nFRENO TRASERO Aluminium-\r\nCAMBIO Shimano Nexus-\r\nBIELA Cyclone Alloy 44T-\r\nEJE DE PEDALIER Newft\r\nCASETTE / PIÑÓN Shimano- \r\nMANILLAR Aluminium-\r\nPOTENCIA Aluminium-\r\nDIRECCIÓN Aluminium-\r\nDIRECCIÓN Neco H842EW-\r\nSILLÍN Kross VL-\r\nPUÑOS Herrmans-\r\nPEDALES Aluminium/Nylon-', '13.00', '11.00', 'imagen/Kross_Flex.jpg'),
-(12, 'Madison', 'niños', 'Adventure', 'Cuadro acero-Horquilla acero-Desviador Shimano Nexus-Freno delantero Caliper (acero)-Freno trasero-Neumáticos 28-Mitas-Sillín vinilo / muelles-Puños de cuero sintético-Luces Reflectores', '13.00', '8.00', 'imagen/Madison_Adventure.jpg');
+(12, 'Madison', 'niños', 'Adventure', 'Cuadro acero-Horquilla acero-Desviador Shimano Nexus-Freno delantero Caliper (acero)-Freno trasero-Neumáticos 28-Mitas-Sillín vinilo / muelles-Puños de cuero sintético-Luces Reflectores', '13.00', '8.00', 'imagen/Madison_Adventure.jpeg'),
+(13, 'Cube', 'montaña', 'Pro', 'Cuadro Aluminium SuperLite-\r\nPeso 10 kg-\r\nHorquilla Aluminium-\r\nBuje delantero Joy Tech-\r\nBuje trasero Joy Tech-\r\nCubiertas Shwalbe Kojak Race-\r\nLlantas Alexrims-\r\nDesviador delantero Shimano-\r\nCambio trasero Shimano -\r\nFreno delantero Tektro-\r\nManetas de freno Tektro-\r\nFreno trasero Shimano-\r\nCambio Shimano Claris-\r\nBiela Shimano Altus-\r\nEje de pedalier Shimano-\r\nCadena Shimano CNHG40-\r\nCasette Shimano CSHG50-\r\nManillar KROSS Sport -\r\nSillin Velo VL1489-\r\nPuños Kross-\r\nPedales Aluminio/Nylon-', '11.00', '12.00', 'imagen/Cube_Pro.jpg'),
+(14, 'Kross', 'montaña', 'Seto', 'Cuadro Aluminium-Peso 12,7 kg-Horquilla Alloy-Amortiguador trasero-Buje delantero Joy-Buje trasero Joy-Cubiertas Schwalbe-Llantas Kross Disc-Desviador delantero-Cambio trasero Shim-Cambio himano-Manillar Kross Urban-Potencia Kross Urban-Dirección Kross Urban-Puños Kross-Pedales VP', '14.00', '13.00', 'imagen/Kross_Seto.jpg');
 
 -- --------------------------------------------------------
 
@@ -97,8 +113,13 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idC`, `nombre`, `email`, `pass`, `apellido1`, `apellido2`, `dni`, `direccion`, `tipoUser`) VALUES
-(1, 'Admin', 'admin@admin.com', '1234', 'Perez', 'Garcia', '74242891H', 'Paseo algo calle 2 p', 'admin'),
-(2, 'Felipe', 'cliente@cliente.com', '1234', 'Perez', 'Oviedo', '74229793F', 'C/ dolar esquina cal', 'cliente');
+(1, 'Admin', 'admin@admin.com', '1234', 'Admin', 'Admin', '74242891H', 'Paseo algo calle 2 p', 'admin'),
+(2, 'Cliente', 'cliente@cliente.com', '1234', 'Cliente', 'Cliente', '74229793F', 'C/ dolar esquina cal', 'cliente'),
+(3, 'Marta', 'marta@cliente.com', '1234', 'Lopez', 'Davo', '74242891H', 'Paseo algo calle 2 p', 'cliente'),
+(4, 'Jaime', 'jaime@cliente.com', '1234', 'Perez', 'Toledo', '74242891H', 'Paseo algo calle 2 p', 'cliente'),
+(5, 'Juan', 'juan@cliente.com', '1234', 'Alfonso', 'Gonzalez', '74242891H', 'Paseo algo calle 2 p', 'cliente'),
+(6, 'Julia', 'julia@admin.com', '1234', 'Ruiz', 'Moreno', '74242891H', 'Paseo algo calle 2 p', 'admin'),
+(7, 'Jorge', 'jorge@admin.com', '1234', 'Campos', 'Garcia', '74242891H', 'Paseo algo calle 2 p', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -131,19 +152,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `alquiler`
 --
 ALTER TABLE `alquiler`
-  MODIFY `idA` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `idA` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de la tabla `bicis`
 --
 ALTER TABLE `bicis`
-  MODIFY `idBici` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idBici` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idC` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idC` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

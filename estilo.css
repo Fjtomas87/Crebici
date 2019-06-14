@@ -43,10 +43,10 @@ footer{
 .bg-black{
     background-color: black;
 }
-link-bicis{
+.link-bicis{
   text-decoration: none;
 }
-label, help-block, .custom-select, .help-block, d-inherit{
+label, .custom-select, .help-block, d-inherit{
     display: inherit !important;
 }
 #formVista div{

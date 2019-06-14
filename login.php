@@ -41,10 +41,19 @@ if(isset($_POST['login'])){
 }else{
     ?>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>?p=login" method="POST" class="container">
-       <h2 class="d-none" id="msgOculto">hola</h2>
-        <label class="p-1" for="email">Email</label><input type="email" id="email" name="email" class="form-control col-sm-6">
-        <label class="p-1" for="pass1">Contraseña</label><input type="password" id="pass1" name="pass1" class="form-control col-sm-6">
-        <br>
+       <h2 class="d-none" id="msgOculto"></h2>
+        <div class="form-group">
+                <label class="p-1" for="email">Email</label>
+                <div class="div-input"> 
+                    <input type="email" id="email" name="email" value="" class="form-control col-sm-6">
+                </div>    
+            </div>
+            <div class="form-group">
+                <label class="p-1" for="pass1">Contraseña</label>
+                <div class="div-input">
+                    <input type="password" id="pass1" name="pass1" class="form-control col-sm-6">
+                </div>    
+            </div>
         <input type="submit" value="ENTRAR" id="entrar" name="login" class="btn btn-warning"> 
     </form>
     <?php

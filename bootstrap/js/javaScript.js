@@ -37,9 +37,36 @@ $(document).ready(function(){
     $("#tipoUser").click(function(){
         botones();
     });
-    
+    $("#nombre").focusout(function(){
+        validar("nombre");
+        botones();
+    });
+    $("#apellido1").focusout(function(){
+        validar("apellido1");
+        botones();
+    });
+    $("#apellido2").focusout(function(){
+        validar("apellido2");
+        botones();
+    });
     $("#email").focusout(function(){
         validar("email");
+        botones();
+    });
+    $("#dni").focusout(function(){
+        validar("dni");
+        botones();
+    });
+    $("#direccion").focusout(function(){
+        validar("direccion");
+        botones();
+    });
+    $("#pass1").focusout(function(){
+        validar("pass1");
+        botones();
+    });
+    $("#pass2").focusout(function(){
+        validar("pass2");
         botones();
     });
     //////////////////////////////////////////////////////////////////////////////
@@ -137,6 +164,7 @@ $(document).ready(function(){
         });
     }else{
         console.log("El navegador no permite la geolocalizacion.");
+        $(".geo").addClass("d-none");
     }
     ////////////////////////////////////////////////////////////////////////////// 
 });

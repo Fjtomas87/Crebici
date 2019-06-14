@@ -32,7 +32,7 @@
                <p class="mt-3">&copy Copyright - Fco J. Tomás Ferrández</p>
 
            </div>
-           <div class="col-12 col-sm-6 col-lg-4 mt-3 p-3">
+           <div class="geo col-12 col-sm-6 col-lg-4 mt-3 p-3">
                 <h3 class="mb-4">¿És buen dia para pasear?</h3>
                 <p class="ciu"></p>
                 <p class="hora"></p>
